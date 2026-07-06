@@ -1,0 +1,3794 @@
+{
+ "source": "/Users/lixiaoli/Projects/knowledge-graph-k8s/docs",
+ "generated": "2026-07-06",
+ "stats": {
+  "pages": 176,
+  "words": 283241,
+  "internal_links": 661,
+  "external_links": 594,
+  "unresolved_links": 1387,
+  "orphan_pages": 44
+ },
+ "entry_points": [
+  "windows/intro.md"
+ ],
+ "root_order": [],
+ "sections": [
+  {
+   "dir": "workloads",
+   "files": 36,
+   "words": 75099
+  },
+  {
+   "dir": "scheduling-eviction",
+   "files": 19,
+   "words": 35887
+  },
+  {
+   "dir": "cluster-administration",
+   "files": 19,
+   "words": 29678
+  },
+  {
+   "dir": "storage",
+   "files": 17,
+   "words": 27693
+  },
+  {
+   "dir": "services-networking",
+   "files": 13,
+   "words": 24883
+  },
+  {
+   "dir": "security",
+   "files": 19,
+   "words": 24849
+  },
+  {
+   "dir": "overview",
+   "files": 15,
+   "words": 14309
+  },
+  {
+   "dir": "configuration",
+   "files": 6,
+   "words": 12368
+  },
+  {
+   "dir": "extend-kubernetes",
+   "files": 8,
+   "words": 10594
+  },
+  {
+   "dir": "architecture",
+   "files": 10,
+   "words": 10403
+  },
+  {
+   "dir": "containers",
+   "files": 6,
+   "words": 6837
+  },
+  {
+   "dir": "policy",
+   "files": 4,
+   "words": 6189
+  },
+  {
+   "dir": "windows",
+   "files": 3,
+   "words": 4398
+  },
+  {
+   "dir": ".",
+   "files": 1,
+   "words": 54
+  }
+ ],
+ "pages": [
+  {
+   "path": "_index.md",
+   "title": "Concepts",
+   "words": 54,
+   "headings": [],
+   "links_out": [],
+   "links_in": 0
+  },
+  {
+   "path": "architecture/_index.md",
+   "title": "Cluster Architecture",
+   "words": 1260,
+   "headings": [
+    "Control plane components",
+    "kube-apiserver",
+    "etcd",
+    "kube-scheduler",
+    "kube-controller-manager",
+    "cloud-controller-manager",
+    "Node components",
+    "kubelet",
+    "kube-proxy (optional) {#kube-proxy}",
+    "Container runtime",
+    "Addons",
+    "DNS"
+   ],
+   "links_out": [
+    "cluster-administration/addons.md",
+    "services-networking/dns-pod-service.md",
+    "cluster-administration/logging.md",
+    "extend-kubernetes/compute-storage-net/network-plugins.md",
+    "architecture/nodes.md",
+    "architecture/control-plane-node-communication.md",
+    "architecture/controller.md",
+    "architecture/garbage-collection.md",
+    "scheduling-eviction/kube-scheduler.md",
+    "architecture/cloud-controller.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "architecture/cgroups.md",
+   "title": "About cgroup v2",
+   "words": 899,
+   "headings": [
+    "What is cgroup v2? {#cgroup-v2}",
+    "Using cgroup v2 {#using-cgroupv2}",
+    "Requirements",
+    "Linux Distribution cgroup v2 support",
+    "Migrating to cgroup v2 {#migrating-cgroupv2}",
+    "Identify the cgroup version on Linux Nodes  {#check-cgroup-version}",
+    "Deprecation of cgroup v1",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "configuration/manage-resources-containers.md",
+    "workloads/pods/pod-qos.md",
+    "containers/cri.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "architecture/cloud-controller.md",
+   "title": "Cloud Controller Manager",
+   "words": 863,
+   "headings": [
+    "Design",
+    "Cloud controller manager functions {#functions-of-the-ccm}",
+    "Node controller",
+    "Route controller",
+    "Service controller",
+    "Authorization",
+    "Node controller {#authorization-node-controller}",
+    "Route controller {#authorization-route-controller}",
+    "Service controller {#authorization-service-controller}",
+    "Others {#authorization-miscellaneous}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [],
+   "links_in": 2
+  },
+  {
+   "path": "architecture/control-plane-node-communication.md",
+   "title": "Communication between Nodes and the Control Plane",
+   "words": 919,
+   "headings": [
+    "Node to Control Plane",
+    "Control plane to node",
+    "API server to kubelet",
+    "API server to nodes, pods, and services",
+    "SSH tunnels",
+    "Konnectivity service",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/kubernetes-api.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "architecture/controller.md",
+   "title": "Controllers",
+   "words": 1104,
+   "headings": [
+    "Controller pattern",
+    "Control via API server",
+    "Direct control",
+    "Desired versus current state {#desired-vs-current}",
+    "Design",
+    "Ways of running controllers {#running-controllers}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/kubernetes-api.md"
+   ],
+   "links_in": 4
+  },
+  {
+   "path": "architecture/garbage-collection.md",
+   "title": "Garbage Collection",
+   "words": 1329,
+   "headings": [
+    "Owners and dependents {#owners-dependents}",
+    "Cascading deletion {#cascading-deletion}",
+    "Foreground cascading deletion {#foreground-deletion}",
+    "Background cascading deletion {#background-deletion}",
+    "Orphaned dependents",
+    "Garbage collection of unused containers and images {#containers-images}",
+    "Container image lifecycle",
+    "Container garbage collection {#container-image-garbage-collection}",
+    "Configuring garbage collection {#configuring-gc}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "workloads/pods/pod-lifecycle.md",
+    "workloads/controllers/ttlafterfinished.md",
+    "storage/persistent-volumes.md",
+    "architecture/cloud-controller.md",
+    "architecture/nodes.md",
+    "overview/working-with-objects/owners-dependents.md",
+    "overview/working-with-objects/labels.md",
+    "overview/working-with-objects/finalizers.md"
+   ],
+   "links_in": 7
+  },
+  {
+   "path": "architecture/leases.md",
+   "title": "Leases",
+   "words": 714,
+   "headings": [
+    "Node heartbeats {#node-heart-beats}",
+    "Leader election",
+    "Kube controller manager lock release on exit",
+    "API server identity",
+    "Workloads {#custom-workload}"
+   ],
+   "links_out": [
+    "architecture/nodes.md",
+    "cluster-administration/coordinated-leader-election.md"
+   ],
+   "links_in": 4
+  },
+  {
+   "path": "architecture/mixed-version-proxy.md",
+   "title": "required command line arguments for this feature",
+   "words": 950,
+   "headings": [
+    "Enabling Peer-aggregated Discovery and Mixed Version Proxy",
+    "Proxy transport and authentication between API servers {#transport-and-authn}",
+    "Configuration for peer API server connectivity",
+    "Peer-aggregated discovery",
+    "Mixed version proxying",
+    "How it works under the hood"
+   ],
+   "links_out": [
+    "overview/kubernetes-api.md",
+    "extend-kubernetes/api-extension/apiserver-aggregation.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "architecture/nodes.md",
+   "title": "Nodes",
+   "words": 2026,
+   "headings": [
+    "Management",
+    "Node name uniqueness",
+    "Self-registration of Nodes",
+    "Manual Node administration",
+    "Node status",
+    "Node heartbeats",
+    "Node controller",
+    "Rate limits on eviction",
+    "Resource capacity tracking {#node-capacity}",
+    "Node topology",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/working-with-objects/names.md",
+    "services-networking/dual-stack.md",
+    "overview/working-with-objects/labels.md",
+    "architecture/leases.md",
+    "scheduling-eviction/api-eviction.md",
+    "cluster-administration/node-shutdown.md",
+    "cluster-administration/node-autoscaling.md",
+    "scheduling-eviction/taint-and-toleration.md",
+    "configuration/windows-resource-management.md"
+   ],
+   "links_in": 11
+  },
+  {
+   "path": "architecture/self-healing.md",
+   "title": "Kubernetes Self-Healing",
+   "words": 339,
+   "headings": [
+    "Self-Healing capabilities {#self-healing-capabilities}",
+    "Considerations {#considerations}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "workloads/pods/pod-lifecycle.md",
+    "workloads/controllers/deployment.md",
+    "workloads/controllers/statefulset.md",
+    "workloads/controllers/daemonset.md",
+    "services-networking/service.md",
+    "architecture/controller.md",
+    "storage/persistent-volumes.md",
+    "cluster-administration/node-autoscaling.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "cluster-administration/_index.md",
+   "title": "Cluster Administration",
+   "words": 503,
+   "headings": [
+    "Planning a cluster",
+    "Managing a cluster",
+    "Securing a cluster",
+    "Securing the kubelet",
+    "Optional Cluster Services"
+   ],
+   "links_out": [
+    "cluster-administration/networking.md",
+    "overview/components.md",
+    "architecture/nodes.md",
+    "cluster-administration/node-autoscaling.md",
+    "policy/resource-quotas.md",
+    "cluster-administration/certificates.md",
+    "containers/container-environment.md",
+    "security/controlling-access.md",
+    "cluster-administration/admission-webhooks-good-practices.md",
+    "architecture/control-plane-node-communication.md",
+    "services-networking/dns-pod-service.md",
+    "cluster-administration/logging.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "cluster-administration/addons.md",
+   "title": "Installing Addons",
+   "words": 836,
+   "headings": [
+    "Networking and Network Policy",
+    "Service Discovery",
+    "Visualization &amp; Control",
+    "Infrastructure",
+    "Instrumentation",
+    "Legacy Add-ons"
+   ],
+   "links_out": [
+    "services-networking/gateway.md",
+    "services-networking/network-policies.md",
+    "architecture/nodes.md",
+    "cluster-administration/kube-state-metrics.md"
+   ],
+   "links_in": 5
+  },
+  {
+   "path": "cluster-administration/admission-webhooks-good-practices.md",
+   "title": "Admission Webhook Good Practices",
+   "words": 3931,
+   "headings": [
+    "Importance of good webhook design {#why-good-webhook-design-matters}",
+    "Identify whether you use admission webhooks {#identify-admission-webhooks}",
+    "Choose an admission control mechanism {#choose-admission-mechanism}",
+    "Use built-in validation and defaulting for CustomResourceDefinitions {#no-crd-validation-defaulting}",
+    "Performance and latency {#performance-latency}",
+    "Design admission webhooks for low latency {#design-admission-webhooks-low-latency}",
+    "Prevent loops caused by competing controllers {#prevent-loops-competing-controllers}",
+    "Set a small timeout value {#small-timeout}",
+    "Use a load balancer to ensure webhook availability {#load-balancer-webhook}",
+    "Use a high-availability deployment model {#ha-deployment}",
+    "Request filtering {#request-filtering}",
+    "Limit the scope of each webhook {#webhook-limit-scope}"
+   ],
+   "links_out": [
+    "workloads/pods/sidecar-containers.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "cluster-administration/certificates.md",
+   "title": "Certificates",
+   "words": 22,
+   "headings": [],
+   "links_out": [],
+   "links_in": 1
+  },
+  {
+   "path": "cluster-administration/compatibility-version.md",
+   "title": "Compatibility Version For Kubernetes Control Plane Components",
+   "words": 186,
+   "headings": [
+    "Emulated Version"
+   ],
+   "links_out": [],
+   "links_in": 0
+  },
+  {
+   "path": "cluster-administration/coordinated-leader-election.md",
+   "title": "Coordinated Leader Election",
+   "words": 626,
+   "headings": [
+    "Enabling coordinated leader election",
+    "Component configuration",
+    "Leader selection for Kubernetes components"
+   ],
+   "links_out": [
+    "architecture/leases.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "cluster-administration/dra.md",
+   "title": "Good practices for Dynamic Resource Allocation as a Cluster Admin",
+   "words": 1366,
+   "headings": [
+    "Separate permissions to DRA related APIs",
+    "DRA driver deployment and maintenance",
+    "Use drivers with seamless upgrade if available",
+    "Confirm your DRA driver exposes a liveness probe and utilize it",
+    "When draining a node, drain the DRA driver as late as possible",
+    "Monitor and tune components for higher load, especially in high scale environments",
+    "`kube-controller-manager` metrics",
+    "`kube-scheduler` metrics",
+    "`kubelet` metrics",
+    "DRA kubeletplugin operations",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [],
+   "links_in": 0
+  },
+  {
+   "path": "cluster-administration/flow-control.md",
+   "title": "API Priority and Fairness",
+   "words": 5960,
+   "headings": [
+    "Enabling/Disabling API Priority and Fairness",
+    "Recursive server scenarios",
+    "Concepts",
+    "Priority Levels",
+    "Seats Occupied by a Request",
+    "Execution time tweaks for watch requests",
+    "Queuing",
+    "Exempt requests",
+    "Resources",
+    "PriorityLevelConfiguration",
+    "FlowSchema",
+    "Defaults"
+   ],
+   "links_out": [],
+   "links_in": 1
+  },
+  {
+   "path": "cluster-administration/kube-state-metrics.md",
+   "title": "Metrics for Kubernetes Object States",
+   "words": 356,
+   "headings": [
+    "Example: using metrics from kube-state-metrics to query the cluster state {#example-kube-state-metrics-query-1}",
+    "Example: alerting based on from kube-state-metrics {#example-kube-state-metrics-alert-1}"
+   ],
+   "links_out": [],
+   "links_in": 2
+  },
+  {
+   "path": "cluster-administration/logging.md",
+   "title": "Logging Architecture",
+   "words": 2467,
+   "headings": [
+    "Pod and container logs {#basic-logging-in-kubernetes}",
+    "Container log streams",
+    "How nodes handle container logs",
+    "Log rotation",
+    "System component logs",
+    "Log locations {#log-location-node}",
+    "Cluster-level logging architectures",
+    "Using a node logging agent",
+    "Using a sidecar container with the logging agent {#sidecar-container-with-logging-agent}",
+    "Exposing logs directly from the application",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "cluster-administration/system-logs.md",
+    "cluster-administration/system-traces.md"
+   ],
+   "links_in": 6
+  },
+  {
+   "path": "cluster-administration/networking.md",
+   "title": "Cluster Networking",
+   "words": 585,
+   "headings": [
+    "Kubernetes IP address ranges",
+    "Cluster networking types {#cluster-network-ipfamilies}",
+    "How to implement the Kubernetes network model",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "services-networking/service.md",
+    "services-networking/dual-stack.md",
+    "cluster-administration/addons.md"
+   ],
+   "links_in": 8
+  },
+  {
+   "path": "cluster-administration/node-autoscaling.md",
+   "title": "Node Autoscaling",
+   "words": 1912,
+   "headings": [
+    "Node provisioning {#provisioning}",
+    "Pod scheduling constraints {#provisioning-pod-constraints}",
+    "Node constraints imposed by autoscaler configuration {#provisioning-node-constraints}",
+    "Auto-provisioning {#autoprovisioning}",
+    "Node consolidation {#consolidation}",
+    "Autoscalers {#autoscalers}",
+    "Autoscaler implementations",
+    "Combine workload and Node autoscaling",
+    "Horizontal workload autoscaling {#horizontal-workload-autoscaling}",
+    "Vertical workload autoscaling {#vertical-workload-autoscaling}",
+    "Related components",
+    "Descheduler"
+   ],
+   "links_out": [
+    "scheduling-eviction/assign-pod-node.md",
+    "storage/volumes.md",
+    "workloads/autoscaling.md"
+   ],
+   "links_in": 7
+  },
+  {
+   "path": "cluster-administration/node-shutdown.md",
+   "title": "Node Shutdowns",
+   "words": 2070,
+   "headings": [
+    "Graceful node shutdown {#graceful-node-shutdown}",
+    "Enabling graceful node shutdown",
+    "Configuring graceful node shutdown",
+    "Pod Priority based graceful node shutdown {#pod-priority-graceful-node-shutdown}",
+    "Non-graceful node shutdown handling {#non-graceful-node-shutdown}",
+    "Forced storage detach on timeout {#storage-force-detach-on-timeout}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "workloads/pods/pod-lifecycle.md",
+    "scheduling-eviction/pod-priority-preemption.md",
+    "architecture/nodes.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "cluster-administration/observability.md",
+   "title": "Observability",
+   "words": 1156,
+   "headings": [
+    "Metrics",
+    "Logs",
+    "Traces",
+    "Common observability tools",
+    "Metrics tools",
+    "Logging tools",
+    "Tracing tools",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "cluster-administration/kube-state-metrics.md",
+    "cluster-administration/system-metrics.md",
+    "cluster-administration/system-logs.md",
+    "cluster-administration/logging.md",
+    "cluster-administration/system-traces.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "cluster-administration/proxies.md",
+   "title": "Proxies in Kubernetes",
+   "words": 331,
+   "headings": [
+    "Proxies",
+    "Requesting redirects"
+   ],
+   "links_out": [
+    "services-networking/service.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "cluster-administration/swap-memory-management.md",
+   "title": "Swap memory management",
+   "words": 2885,
+   "headings": [
+    "Operating system support",
+    "How does it work?",
+    "Swap behaviors",
+    "Container runtime integration",
+    "Observability for swap use",
+    "Node and container level metric statistics",
+    "Using `kubectl top --show-swap`",
+    "Nodes to report swap capacity as part of node status",
+    "Swap discovery using Node Feature Discovery (NFD) {#node-feature-discovery}",
+    "Risks and caveats",
+    "Memory-backed volumes",
+    "Evictions"
+   ],
+   "links_out": [
+    "configuration/secret.md",
+    "storage/volumes.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "cluster-administration/system-logs.md",
+   "title": "System Logs",
+   "words": 1765,
+   "headings": [
+    "Klog",
+    "Klog output",
+    "Structured Logging",
+    "Contextual Logging",
+    "JSON log format",
+    "Log verbosity level",
+    "Log location",
+    "Log query",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "cluster-administration/logging.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "cluster-administration/system-metrics.md",
+   "title": "Metrics For Kubernetes System Components",
+   "words": 1982,
+   "headings": [
+    "Metrics in Kubernetes",
+    "Metric lifecycle",
+    "Show hidden metrics",
+    "Component metrics",
+    "kube-controller-manager metrics",
+    "kube-scheduler metrics",
+    "kubelet Pressure Stall Information (PSI) metrics",
+    "Disabling metrics",
+    "Metric cardinality enforcement",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "configuration/manage-resources-containers.md",
+    "architecture/cgroups.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "cluster-administration/system-traces.md",
+   "title": "default value",
+   "words": 739,
+   "headings": [
+    "Trace Collection",
+    "Component traces",
+    "kube-apiserver traces",
+    "kubelet traces",
+    "Stability",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [],
+   "links_in": 2
+  },
+  {
+   "path": "configuration/_index.md",
+   "title": "Configuration",
+   "words": 15,
+   "headings": [],
+   "links_out": [],
+   "links_in": 0
+  },
+  {
+   "path": "configuration/configmap.md",
+   "title": "ConfigMaps",
+   "words": 1854,
+   "headings": [
+    "Motivation",
+    "ConfigMap object",
+    "ConfigMaps and Pods",
+    "Using ConfigMaps",
+    "Using ConfigMaps as files from a Pod",
+    "Using Configmaps as environment variables",
+    "Immutable ConfigMaps {#configmap-immutable}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/working-with-objects/names.md",
+    "storage/volumes.md",
+    "configuration/secret.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "configuration/manage-resources-containers.md",
+   "title": "Resource Management for Pods and Containers",
+   "words": 4532,
+   "headings": [
+    "Requests and limits",
+    "Resource types",
+    "Huge pages",
+    "Resource requests and limits of Pod and container",
+    "Pod-level resource specification",
+    "Resource units in Kubernetes",
+    "CPU resource units {#meaning-of-cpu}",
+    "Memory resource units {#meaning-of-memory}",
+    "Container resources example {#example-1}",
+    "Pod resources example {#example-2}",
+    "How Pods with resource requests are scheduled",
+    "How Kubernetes applies resource requests and limits {#how-pods-with-resource-limits-are-run}"
+   ],
+   "links_out": [
+    "workloads/pods/pod-qos.md",
+    "storage/ephemeral-storage.md",
+    "overview/kubernetes-api.md",
+    "services-networking/service.md",
+    "workloads/pods/pod-lifecycle.md",
+    "workloads/autoscaling/vertical-pod-autoscale.md",
+    "policy/resource-quotas.md",
+    "policy/limit-range.md",
+    "extend-kubernetes/compute-storage-net/device-plugins.md",
+    "policy/pid-limiting.md"
+   ],
+   "links_in": 18
+  },
+  {
+   "path": "configuration/organize-cluster-access-kubeconfig.md",
+   "title": "Organizing Cluster Access Using kubeconfig Files",
+   "words": 965,
+   "headings": [
+    "Supporting multiple clusters, users, and authentication mechanisms",
+    "Context",
+    "The KUBECONFIG environment variable",
+    "Merging kubeconfig files",
+    "File references",
+    "Proxy",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/kubectl.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "configuration/secret.md",
+   "title": "Secrets",
+   "words": 4466,
+   "headings": [
+    "Uses for Secrets",
+    "Use case: dotfiles in a secret volume",
+    "Use case: Secret visible to one container in a Pod",
+    "Alternatives to Secrets",
+    "Types of Secret {#secret-types}",
+    "Opaque Secrets",
+    "ServiceAccount token Secrets",
+    "Docker config Secrets",
+    "Basic authentication Secret",
+    "SSH authentication Secrets",
+    "TLS Secrets",
+    "Bootstrap token Secrets"
+   ],
+   "links_out": [
+    "security/secrets-good-practices.md",
+    "extend-kubernetes/compute-storage-net/device-plugins.md",
+    "security/service-accounts.md",
+    "services-networking/ingress.md",
+    "overview/working-with-objects/names.md",
+    "policy/resource-quotas.md",
+    "storage/volumes.md",
+    "containers/images.md"
+   ],
+   "links_in": 7
+  },
+  {
+   "path": "configuration/windows-resource-management.md",
+   "title": "Resource Management for Windows nodes",
+   "words": 536,
+   "headings": [
+    "Memory management {#resource-management-memory}",
+    "CPU management {#resource-management-cpu}",
+    "Resource reservation {#resource-reservation}"
+   ],
+   "links_out": [],
+   "links_in": 3
+  },
+  {
+   "path": "containers/_index.md",
+   "title": "Containers",
+   "words": 316,
+   "headings": [
+    "Container images",
+    "Container runtimes"
+   ],
+   "links_out": [
+    "containers/images.md",
+    "containers/runtime-class.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "containers/container-environment.md",
+   "title": "Container Environment",
+   "words": 271,
+   "headings": [
+    "Container environment",
+    "Container information",
+    "Cluster information",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "containers/images.md",
+    "storage/volumes.md",
+    "containers/container-lifecycle-hooks.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "containers/container-lifecycle-hooks.md",
+   "title": "Container Lifecycle Hooks",
+   "words": 1070,
+   "headings": [
+    "Overview",
+    "Container hooks",
+    "Hook handler implementations",
+    "Hook handler execution",
+    "Hook delivery guarantees",
+    "Debugging Hook handlers",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "workloads/pods/pod-lifecycle.md",
+    "containers/container-environment.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "containers/cri.md",
+   "title": "Container Runtime Interface (CRI)",
+   "words": 400,
+   "headings": [
+    "The API {#api}",
+    "Upgrading",
+    "List streaming {#list-streaming}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [],
+   "links_in": 3
+  },
+  {
+   "path": "containers/images.md",
+   "title": "Images",
+   "words": 3909,
+   "headings": [
+    "Image names",
+    "Updating images",
+    "Image pull policy",
+    "ImagePullBackOff",
+    "Image pull per runtime class",
+    "Serial and parallel image pulls",
+    "Maximum parallel image pulls",
+    "Multi-architecture images with image indexes",
+    "Using a private registry",
+    "Specifying `imagePullSecrets` on a Pod",
+    "Configuring nodes to authenticate to a private registry",
+    "Kubelet credential provider for authenticated image pulls {#kubelet-credential-provider}"
+   ],
+   "links_out": [
+    "workloads/pods/pod-lifecycle.md",
+    "architecture/garbage-collection.md"
+   ],
+   "links_in": 5
+  },
+  {
+   "path": "containers/runtime-class.md",
+   "title": "RuntimeClass is defined in the node.k8s.io API group",
+   "words": 871,
+   "headings": [
+    "Motivation",
+    "Setup",
+    "1. Configure the CRI implementation on nodes",
+    "2. Create the corresponding RuntimeClass resources",
+    "Usage",
+    "CRI Configuration",
+    "Scheduling",
+    "Pod Overhead",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/working-with-objects/names.md",
+    "workloads/pods/pod-lifecycle.md",
+    "scheduling-eviction/assign-pod-node.md",
+    "scheduling-eviction/pod-overhead.md"
+   ],
+   "links_in": 6
+  },
+  {
+   "path": "extend-kubernetes/_index.md",
+   "title": "Extending Kubernetes",
+   "words": 2128,
+   "headings": [
+    "Configuration",
+    "Extensions",
+    "Extension patterns",
+    "Extension points",
+    "Client extensions",
+    "API extensions",
+    "Custom resource definitions",
+    "API aggregation layer",
+    "Combining new APIs with automation",
+    "Changing built-in resources",
+    "API access extensions",
+    "Authentication"
+   ],
+   "links_out": [
+    "scheduling-eviction/kube-scheduler.md",
+    "policy/resource-quotas.md",
+    "services-networking/network-policies.md",
+    "extend-kubernetes/compute-storage-net/network-plugins.md",
+    "scheduling-eviction/assign-pod-node.md",
+    "extend-kubernetes/api-extension/custom-resources.md",
+    "extend-kubernetes/api-extension/apiserver-aggregation.md",
+    "security/controlling-access.md",
+    "extend-kubernetes/compute-storage-net/device-plugins.md",
+    "storage/volumes.md",
+    "scheduling-eviction/scheduling-framework.md",
+    "extend-kubernetes/operator.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "extend-kubernetes/operator.md",
+   "title": "Operator pattern",
+   "words": 872,
+   "headings": [
+    "Motivation",
+    "Operators in Kubernetes",
+    "An example operator {#example}",
+    "Deploying operators",
+    "Using an operator {#using-operators}",
+    "Writing your own operator {#writing-operator}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "extend-kubernetes/api-extension/custom-resources.md",
+    "architecture/controller.md"
+   ],
+   "links_in": 3
+  },
+  {
+   "path": "extend-kubernetes/api-extension/_index.md",
+   "title": "Extending the Kubernetes API",
+   "words": 153,
+   "headings": [],
+   "links_out": [
+    "extend-kubernetes/api-extension/custom-resources.md",
+    "extend-kubernetes/api-extension/apiserver-aggregation.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "extend-kubernetes/api-extension/apiserver-aggregation.md",
+   "title": "Kubernetes API Aggregation Layer",
+   "words": 344,
+   "headings": [
+    "Aggregation layer",
+    "Response latency",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "extend-kubernetes/api-extension/custom-resources.md"
+   ],
+   "links_in": 6
+  },
+  {
+   "path": "extend-kubernetes/api-extension/custom-resources.md",
+   "title": "Custom Resources",
+   "words": 3097,
+   "headings": [
+    "Custom resources",
+    "Custom controllers",
+    "Should I add a custom resource to my Kubernetes cluster?",
+    "Declarative APIs",
+    "Should I use a ConfigMap or a custom resource?",
+    "Adding custom resources",
+    "CustomResourceDefinitions",
+    "API server aggregation",
+    "Choosing a method for adding custom resources",
+    "Comparing ease of use",
+    "Advanced features and flexibility",
+    "Common Features"
+   ],
+   "links_out": [
+    "overview/kubernetes-api.md",
+    "extend-kubernetes/operator.md",
+    "extend-kubernetes/api-extension/apiserver-aggregation.md",
+    "overview/working-with-objects/names.md",
+    "overview/working-with-objects/field-selectors.md"
+   ],
+   "links_in": 8
+  },
+  {
+   "path": "extend-kubernetes/compute-storage-net/_index.md",
+   "title": "Compute, Storage, and Networking Extensions",
+   "words": 271,
+   "headings": [],
+   "links_out": [
+    "storage/volumes.md",
+    "extend-kubernetes/compute-storage-net/device-plugins.md",
+    "extend-kubernetes/compute-storage-net/network-plugins.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "extend-kubernetes/compute-storage-net/device-plugins.md",
+   "title": "This Pod needs 2 of the hardware-vendor.example/foo devices",
+   "words": 3110,
+   "headings": [
+    "Device plugin registration",
+    "Example {#example-pod}",
+    "Device plugin implementation",
+    "Handling kubelet restarts",
+    "Device plugin and unhealthy devices",
+    "Device plugin deployment",
+    "API compatibility",
+    "Monitoring device plugin resources",
+    "`List` gRPC endpoint {#grpc-endpoint-list}",
+    "`GetAllocatableResources` gRPC endpoint {#grpc-endpoint-getallocatableresources}",
+    "`Get` gRPC endpoint {#grpc-endpoint-get}",
+    "Device plugin integration with the Topology Manager"
+   ],
+   "links_out": [
+    "configuration/manage-resources-containers.md",
+    "overview/working-with-objects/annotations.md"
+   ],
+   "links_in": 7
+  },
+  {
+   "path": "extend-kubernetes/compute-storage-net/network-plugins.md",
+   "title": "Network Plugins",
+   "words": 619,
+   "headings": [
+    "Installation",
+    "Network Plugin Requirements",
+    "Loopback CNI",
+    "Support hostPort",
+    "Support traffic shaping",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "cluster-administration/networking.md",
+    "services-networking/network-policies.md"
+   ],
+   "links_in": 9
+  },
+  {
+   "path": "overview/_index.md",
+   "title": "Overview",
+   "words": 1489,
+   "headings": [
+    "Why you need Kubernetes and what it can do {#why-you-need-kubernetes-and-what-can-it-do}",
+    "What Kubernetes is not",
+    "Historical context for Kubernetes {#going-back-in-time}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/components.md",
+    "overview/kubernetes-api.md",
+    "overview/kubectl.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "overview/components.md",
+   "title": "Kubernetes Components",
+   "words": 363,
+   "headings": [
+    "Core Components",
+    "Control Plane Components",
+    "Node Components",
+    "Addons",
+    "Flexibility in Architecture"
+   ],
+   "links_out": [],
+   "links_in": 4
+  },
+  {
+   "path": "overview/kubectl.md",
+   "title": "The kubectl command-line tool",
+   "words": 662,
+   "headings": [
+    "Role of kubectl",
+    "How kubectl works",
+    "What you can do with kubectl",
+    "Declarative vs imperative",
+    "Extending kubectl with plugins",
+    "Version compatibility",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/kubernetes-api.md",
+    "configuration/organize-cluster-access-kubeconfig.md",
+    "overview/components.md",
+    "overview/working-with-objects/object-management.md"
+   ],
+   "links_in": 7
+  },
+  {
+   "path": "overview/kubernetes-api.md",
+   "title": "The Kubernetes API",
+   "words": 1879,
+   "headings": [
+    "Discovery API",
+    "Aggregated discovery",
+    "Unaggregated discovery",
+    "OpenAPI interface definition",
+    "OpenAPI V2",
+    "OpenAPI V3",
+    "Protobuf serialization",
+    "Persistence",
+    "API groups and versioning",
+    "API changes",
+    "API Extension",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/kubectl.md",
+    "extend-kubernetes/api-extension/custom-resources.md",
+    "extend-kubernetes/api-extension/apiserver-aggregation.md",
+    "security/controlling-access.md"
+   ],
+   "links_in": 10
+  },
+  {
+   "path": "overview/working-with-objects/_index.md",
+   "title": "Objects In Kubernetes",
+   "words": 1161,
+   "headings": [
+    "Understanding Kubernetes objects {#kubernetes-objects}",
+    "Object spec and status",
+    "Describing a Kubernetes object",
+    "Required fields",
+    "Server side field validation",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/kubernetes-api.md",
+    "workloads/controllers/deployment.md",
+    "architecture/controller.md",
+    "overview/kubectl.md",
+    "overview/working-with-objects/object-management.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "overview/working-with-objects/annotations.md",
+   "title": "Annotations",
+   "words": 639,
+   "headings": [
+    "Attaching metadata to objects",
+    "Syntax and character set",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/working-with-objects/labels.md"
+   ],
+   "links_in": 5
+  },
+  {
+   "path": "overview/working-with-objects/common-labels.md",
+   "title": "This is an excerpt",
+   "words": 731,
+   "headings": [
+    "Labels",
+    "Applications And Instances Of Applications",
+    "Examples",
+    "A Simple Stateless Service",
+    "Web Application With A Database"
+   ],
+   "links_out": [],
+   "links_in": 1
+  },
+  {
+   "path": "overview/working-with-objects/field-selectors.md",
+   "title": "Field Selectors",
+   "words": 438,
+   "headings": [
+    "Supported fields",
+    "List of supported fields",
+    "Custom resources fields",
+    "Supported operators",
+    "Chained selectors",
+    "Multiple resource types"
+   ],
+   "links_out": [
+    "workloads/pods/pod-lifecycle.md",
+    "overview/working-with-objects/labels.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "overview/working-with-objects/finalizers.md",
+   "title": "Finalizers",
+   "words": 718,
+   "headings": [
+    "How finalizers work",
+    "Owner references, labels, and finalizers {#owners-labels-finalizers}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/working-with-objects/owners-dependents.md"
+   ],
+   "links_in": 3
+  },
+  {
+   "path": "overview/working-with-objects/labels.md",
+   "title": "Labels and Selectors",
+   "words": 1970,
+   "headings": [
+    "Motivation",
+    "Syntax and character set",
+    "Label selectors",
+    "_Equality-based_ requirement",
+    "_Set-based_ requirement",
+    "API",
+    "LIST and WATCH filtering",
+    "Set references in API objects",
+    "Using labels effectively",
+    "Updating labels",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/working-with-objects/annotations.md",
+    "overview/working-with-objects/common-labels.md",
+    "overview/working-with-objects/names.md",
+    "services-networking/service.md",
+    "workloads/controllers/replicationcontroller.md",
+    "workloads/controllers/job.md",
+    "workloads/controllers/deployment.md",
+    "workloads/controllers/replicaset.md",
+    "workloads/controllers/daemonset.md",
+    "scheduling-eviction/assign-pod-node.md"
+   ],
+   "links_in": 14
+  },
+  {
+   "path": "overview/working-with-objects/names.md",
+   "title": "Object Names and IDs",
+   "words": 723,
+   "headings": [
+    "Names",
+    "DNS Subdomain Names",
+    "RFC 1123 Label Names {#dns-label-names}",
+    "RFC 1035 Label Names",
+    "Path Segment Names",
+    "UIDs",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/working-with-objects/namespaces.md",
+    "overview/working-with-objects/labels.md",
+    "overview/working-with-objects/annotations.md",
+    "overview/kubernetes-api.md"
+   ],
+   "links_in": 26
+  },
+  {
+   "path": "overview/working-with-objects/namespaces.md",
+   "title": "Validate it",
+   "words": 806,
+   "headings": [
+    "When to Use Multiple Namespaces",
+    "Initial namespaces",
+    "Working with Namespaces",
+    "Viewing namespaces",
+    "Setting the namespace for a request",
+    "Setting the namespace preference",
+    "Namespaces and DNS",
+    "Not all objects are in a namespace",
+    "Automatic labelling",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "policy/resource-quotas.md",
+    "architecture/leases.md",
+    "architecture/nodes.md",
+    "services-networking/service.md",
+    "services-networking/dns-pod-service.md",
+    "overview/working-with-objects/names.md",
+    "storage/persistent-volumes.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "overview/working-with-objects/object-management.md",
+   "title": "Kubernetes Object Management",
+   "words": 921,
+   "headings": [
+    "Management techniques",
+    "Imperative commands",
+    "Examples",
+    "Trade-offs",
+    "Imperative object configuration",
+    "Examples",
+    "Trade-offs",
+    "Declarative object configuration",
+    "Examples",
+    "Trade-offs",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [],
+   "links_in": 6
+  },
+  {
+   "path": "overview/working-with-objects/owners-dependents.md",
+   "title": "Owners and Dependents",
+   "words": 660,
+   "headings": [
+    "Owner references in object specifications",
+    "Ownership and finalizers",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/working-with-objects/labels.md",
+    "overview/working-with-objects/finalizers.md",
+    "storage/persistent-volumes.md",
+    "storage/volumes.md",
+    "architecture/garbage-collection.md"
+   ],
+   "links_in": 3
+  },
+  {
+   "path": "overview/working-with-objects/storage-version.md",
+   "title": "Storage Versions",
+   "words": 1149,
+   "headings": [
+    "Storage version to resource mapping",
+    "Storage versions for custom resources {#CustomResourceDefinition-storage-version}",
+    "How storage versions are relevant to encryption at rest",
+    "Migrating to a different storage version"
+   ],
+   "links_out": [
+    "extend-kubernetes/api-extension/custom-resources.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "policy/_index.md",
+   "title": "Policies",
+   "words": 447,
+   "headings": [
+    "Apply policies using API objects",
+    "Apply policies using admission controllers",
+    "Apply policies using ValidatingAdmissionPolicy",
+    "Apply policies using dynamic admission control",
+    "Implementations {#implementations-admission-control}",
+    "Apply policies using Kubelet configurations"
+   ],
+   "links_out": [
+    "services-networking/network-policies.md",
+    "policy/limit-range.md",
+    "policy/resource-quotas.md",
+    "policy/pid-limiting.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "policy/limit-range.md",
+   "title": "Limit Ranges",
+   "words": 921,
+   "headings": [
+    "Constraints on resource limits and requests",
+    "LimitRange and admission checks for Pods",
+    "Example resource constraints",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "configuration/manage-resources-containers.md",
+    "policy/resource-quotas.md",
+    "overview/working-with-objects/names.md"
+   ],
+   "links_in": 6
+  },
+  {
+   "path": "policy/pid-limiting.md",
+   "title": "Process ID Limits And Reservations",
+   "words": 867,
+   "headings": [
+    "Node PID limits",
+    "Pod PID limits",
+    "PID based eviction",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "configuration/manage-resources-containers.md",
+    "scheduling-eviction/node-pressure-eviction.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "policy/resource-quotas.md",
+   "title": "Resource Quotas",
+   "words": 3954,
+   "headings": [
+    "How Kubernetes ResourceQuotas work",
+    "Enabling Resource Quota",
+    "Types of resource quota",
+    "Quota for infrastructure resources {#compute-resource-quota}",
+    "Quota for extended resources",
+    "Quota for DRA resource claims",
+    "Quota for storage",
+    "Quota on object count",
+    "Viewing and Setting Quotas",
+    "Quota and Cluster Capacity",
+    "Quota scopes",
+    "Best effort Pods scope {#quota-scope-best-effort}"
+   ],
+   "links_out": [
+    "policy/limit-range.md",
+    "overview/working-with-objects/names.md",
+    "configuration/manage-resources-containers.md",
+    "storage/persistent-volumes.md",
+    "storage/storage-classes.md",
+    "cluster-administration/logging.md",
+    "extend-kubernetes/api-extension/apiserver-aggregation.md",
+    "scheduling-eviction/assign-pod-node.md",
+    "scheduling-eviction/pod-priority-preemption.md",
+    "storage/volume-attributes-classes.md",
+    "workloads/pods/pod-qos.md"
+   ],
+   "links_in": 14
+  },
+  {
+   "path": "scheduling-eviction/_index.md",
+   "title": "Scheduling, Preemption and Eviction",
+   "words": 152,
+   "headings": [
+    "Scheduling",
+    "Pod Disruption"
+   ],
+   "links_out": [
+    "scheduling-eviction/kube-scheduler.md",
+    "scheduling-eviction/assign-pod-node.md",
+    "scheduling-eviction/pod-overhead.md",
+    "scheduling-eviction/topology-spread-constraints.md",
+    "scheduling-eviction/taint-and-toleration.md",
+    "scheduling-eviction/scheduling-framework.md",
+    "scheduling-eviction/scheduler-perf-tuning.md",
+    "scheduling-eviction/resource-bin-packing.md",
+    "scheduling-eviction/pod-scheduling-readiness.md",
+    "scheduling-eviction/podgroup-scheduling.md",
+    "scheduling-eviction/gang-scheduling.md",
+    "scheduling-eviction/workload-aware-preemption.md",
+    "scheduling-eviction/node-declared-features.md",
+    "scheduling-eviction/pod-priority-preemption.md",
+    "scheduling-eviction/node-pressure-eviction.md",
+    "scheduling-eviction/api-eviction.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "scheduling-eviction/api-eviction.md",
+   "title": "API-initiated Eviction",
+   "words": 672,
+   "headings": [
+    "Calling the Eviction API",
+    "How API-initiated eviction works",
+    "Troubleshooting stuck evictions",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "workloads/pods/pod-lifecycle.md",
+    "scheduling-eviction/node-pressure-eviction.md",
+    "scheduling-eviction/pod-priority-preemption.md"
+   ],
+   "links_in": 4
+  },
+  {
+   "path": "scheduling-eviction/assign-pod-node.md",
+   "title": "Assigning Pods to Nodes",
+   "words": 4281,
+   "headings": [
+    "Node labels {#built-in-node-labels}",
+    "Node isolation/restriction",
+    "nodeSelector",
+    "Affinity and anti-affinity",
+    "Node affinity",
+    "Inter-pod affinity and anti-affinity",
+    "nodeName",
+    "nominatedNodeName",
+    "Pod topology spread constraints",
+    "Pod topology labels",
+    "Operators",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/working-with-objects/labels.md",
+    "scheduling-eviction/taint-and-toleration.md",
+    "workloads/controllers/daemonset.md",
+    "scheduling-eviction/topology-spread-constraints.md"
+   ],
+   "links_in": 17
+  },
+  {
+   "path": "scheduling-eviction/dynamic-resource-allocation.md",
+   "title": "Dynamic Resource Allocation",
+   "words": 9288,
+   "headings": [
+    "About DRA {#about-dra}",
+    "Benefits of DRA {#dra-benefits}",
+    "Types of DRA users {#dra-user-types}",
+    "DRA terminology {#terminology}",
+    "DeviceClass {#deviceclass}",
+    "ResourceClaims and ResourceClaimTemplates {#resourceclaims-templates}",
+    "ResourceSlice {#resourceslice}",
+    "How resource allocation with DRA works {#how-it-works}",
+    "Workflow for users {#user-workflow}",
+    "Workflow for Kubernetes {#kubernetes-workflow}",
+    "Observability of dynamic resources {#observability-dynamic-resources}",
+    "kubelet device metrics {#monitoring-resources}"
+   ],
+   "links_out": [
+    "storage/dynamic-provisioning.md",
+    "extend-kubernetes/compute-storage-net/device-plugins.md",
+    "scheduling-eviction/pod-priority-preemption.md",
+    "scheduling-eviction/taint-and-toleration.md",
+    "scheduling-eviction/scheduling-framework.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "scheduling-eviction/gang-scheduling.md",
+   "title": "Gang Scheduling",
+   "words": 328,
+   "headings": [
+    "How it works",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "workloads/workload-api/policies.md",
+    "scheduling-eviction/podgroup-scheduling.md",
+    "workloads/podgroup-api/lifecycle.md"
+   ],
+   "links_in": 11
+  },
+  {
+   "path": "scheduling-eviction/kube-scheduler.md",
+   "title": "Kubernetes Scheduler",
+   "words": 640,
+   "headings": [
+    "Scheduling overview {#scheduling}",
+    "kube-scheduler",
+    "Node selection in kube-scheduler {#kube-scheduler-implementation}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "workloads/workload-api/policies.md",
+    "scheduling-eviction/scheduler-perf-tuning.md",
+    "scheduling-eviction/topology-spread-constraints.md",
+    "scheduling-eviction/pod-overhead.md",
+    "storage/storage-classes.md",
+    "storage/storage-capacity.md",
+    "storage/storage-limits.md"
+   ],
+   "links_in": 4
+  },
+  {
+   "path": "scheduling-eviction/node-declared-features.md",
+   "title": "Node Declared Features",
+   "words": 322,
+   "headings": [
+    "How it Works",
+    "Enabling node declared features",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [],
+   "links_in": 1
+  },
+  {
+   "path": "scheduling-eviction/node-pressure-eviction.md",
+   "title": "Node-pressure Eviction",
+   "words": 3636,
+   "headings": [
+    "Self healing behavior",
+    "Self healing for static pods",
+    "Eviction signals and thresholds",
+    "Eviction signals {#eviction-signals}",
+    "Deprecated kubelet garbage collection features",
+    "Eviction thresholds",
+    "Eviction monitoring interval",
+    "Node conditions {#node-conditions}",
+    "Node condition oscillation",
+    "Reclaiming node level resources {#reclaim-node-resources}",
+    "Pod selection for kubelet eviction",
+    "Minimum eviction reclaim"
+   ],
+   "links_out": [
+    "workloads/pods/pod-lifecycle.md",
+    "scheduling-eviction/api-eviction.md",
+    "architecture/nodes.md",
+    "scheduling-eviction/taint-and-toleration.md",
+    "scheduling-eviction/pod-priority-preemption.md",
+    "workloads/pods/pod-qos.md"
+   ],
+   "links_in": 8
+  },
+  {
+   "path": "scheduling-eviction/pod-overhead.md",
+   "title": "You need to change this example to match the actual runtime name, and per-Pod",
+   "words": 1008,
+   "headings": [
+    "Configuring Pod overhead {#set-up}",
+    "Usage example",
+    "Verify Pod cgroup limits",
+    "Observability",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "containers/runtime-class.md",
+    "policy/resource-quotas.md"
+   ],
+   "links_in": 5
+  },
+  {
+   "path": "scheduling-eviction/pod-priority-preemption.md",
+   "title": "Pod Priority and Preemption",
+   "words": 2597,
+   "headings": [
+    "How to use priority and preemption",
+    "PriorityClass",
+    "Notes about PodPriority and existing clusters",
+    "Example PriorityClass",
+    "Non-preempting PriorityClass {#non-preempting-priority-class}",
+    "Example Non-preempting PriorityClass",
+    "Pod priority",
+    "Effect of Pod priority on scheduling order",
+    "Preemption",
+    "User exposed information",
+    "Limitations of preemption",
+    "Troubleshooting"
+   ],
+   "links_out": [
+    "policy/resource-quotas.md",
+    "overview/working-with-objects/names.md",
+    "workloads/pods/pod-lifecycle.md",
+    "workloads/pods/disruptions.md",
+    "scheduling-eviction/node-pressure-eviction.md",
+    "scheduling-eviction/api-eviction.md"
+   ],
+   "links_in": 15
+  },
+  {
+   "path": "scheduling-eviction/pod-scheduling-readiness.md",
+   "title": "Pod Scheduling Readiness",
+   "words": 591,
+   "headings": [
+    "Configuring Pod schedulingGates",
+    "Usage example",
+    "Observability",
+    "Mutable Pod scheduling directives",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [],
+   "links_in": 3
+  },
+  {
+   "path": "scheduling-eviction/podgroup-scheduling.md",
+   "title": "PodGroup Scheduling",
+   "words": 1197,
+   "headings": [
+    "PodGroup scheduling cycle",
+    "PodGroup scheduling algorithm",
+    "Placement scheduling algorithm",
+    "Phase 1: Candidate placement generation",
+    "Phase 2: Pod-level filtering and feasibility check",
+    "Phase 3:  Placement scoring and selection",
+    "Limitations",
+    "PodGroup conditions",
+    "`PodGroupScheduled`",
+    "`DisruptionTarget`",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "scheduling-eviction/gang-scheduling.md"
+   ],
+   "links_in": 5
+  },
+  {
+   "path": "scheduling-eviction/resource-bin-packing.md",
+   "title": "Resource Bin Packing",
+   "words": 1065,
+   "headings": [
+    "Enabling bin packing using MostAllocated strategy",
+    "Enabling bin packing using RequestedToCapacityRatio",
+    "Tuning the score function",
+    "Node scoring for capacity allocation",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "scheduling-eviction/scheduling-framework.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "scheduling-eviction/scheduler-perf-tuning.md",
+   "title": "Scheduler Performance Tuning",
+   "words": 1234,
+   "headings": [
+    "Setting the threshold",
+    "Node scoring threshold {#percentage-of-nodes-to-score}",
+    "Default threshold",
+    "Example",
+    "Tuning percentageOfNodesToScore",
+    "How the scheduler iterates over Nodes",
+    "Enabling Opportunistic Batching",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "scheduling-eviction/kube-scheduler.md",
+    "scheduling-eviction/topology-spread-constraints.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "scheduling-eviction/scheduling-framework.md",
+   "title": "Scheduling Framework",
+   "words": 1715,
+   "headings": [
+    "Framework workflow",
+    "Scheduling cycle & binding cycle",
+    "Interfaces",
+    "PreEnqueue {#pre-enqueue}",
+    "EnqueueExtension",
+    "QueueingHint",
+    "QueueSort {#queue-sort}",
+    "PreFilter {#pre-filter}",
+    "Filter",
+    "PostFilter {#post-filter}",
+    "PreScore {#pre-score}",
+    "Score {#scoring}"
+   ],
+   "links_out": [
+    "storage/storage-capacity.md"
+   ],
+   "links_in": 4
+  },
+  {
+   "path": "scheduling-eviction/taint-and-toleration.md",
+   "title": "Taints and Tolerations",
+   "words": 2660,
+   "headings": [
+    "Concepts",
+    "Numeric comparison operators {#numeric-comparison-operators}",
+    "Example Use Cases",
+    "Taint based Evictions",
+    "Taint Nodes by Condition",
+    "Device taints and tolerations",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "scheduling-eviction/assign-pod-node.md",
+    "scheduling-eviction/pod-priority-preemption.md",
+    "configuration/manage-resources-containers.md",
+    "workloads/controllers/daemonset.md",
+    "scheduling-eviction/node-pressure-eviction.md"
+   ],
+   "links_in": 8
+  },
+  {
+   "path": "scheduling-eviction/topology-aware-scheduling.md",
+   "title": "Topology-Aware Workload Scheduling",
+   "words": 396,
+   "headings": [
+    "Scheduling framework: TAS plugins configuration",
+    "Customizing plugin weights and bin-packing resource weights",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "scheduling-eviction/podgroup-scheduling.md",
+    "workloads/workload-api/policies.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "scheduling-eviction/topology-spread-constraints.md",
+   "title": "Pod Topology Spread Constraints",
+   "words": 3692,
+   "headings": [
+    "Motivation",
+    "`topologySpreadConstraints` field",
+    "Spread constraint definition",
+    "Node labels",
+    "Consistency",
+    "Topology spread constraint examples",
+    "Example: one topology spread constraint {#example-one-topologyspreadconstraint}",
+    "Example: multiple topology spread constraints {#example-multiple-topologyspreadconstraints}",
+    "Example: conflicting topology spread constraints {#example-conflicting-topologyspreadconstraints}",
+    "Example: topology spread constraints with node affinity {#example-topologyspreadconstraints-with-nodeaffinity}",
+    "Implicit conventions",
+    "Cluster-level default constraints"
+   ],
+   "links_out": [
+    "overview/working-with-objects/labels.md",
+    "workloads/controllers/deployment.md",
+    "scheduling-eviction/assign-pod-node.md"
+   ],
+   "links_in": 5
+  },
+  {
+   "path": "scheduling-eviction/workload-aware-preemption.md",
+   "title": "Workload-Aware Preemption",
+   "words": 413,
+   "headings": [
+    "How it works",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "scheduling-eviction/gang-scheduling.md",
+    "scheduling-eviction/pod-priority-preemption.md",
+    "workloads/workload-api/disruption-and-priority.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "security/_index.md",
+   "title": "Security",
+   "words": 682,
+   "headings": [
+    "Kubernetes security mechanisms {#security-mechanisms}",
+    "Control plane protection",
+    "Secrets",
+    "Workload protection",
+    "Admission control {#admission-control}",
+    "Auditing",
+    "Cloud provider security",
+    "Policies",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "security/cloud-native-security.md",
+    "security/controlling-access.md",
+    "configuration/secret.md",
+    "security/pod-security-standards.md",
+    "containers/runtime-class.md",
+    "services-networking/network-policies.md",
+    "cluster-administration/admission-webhooks-good-practices.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "security/api-server-bypass-risks.md",
+   "title": "Kubernetes API Server Bypass Risks",
+   "words": 1288,
+   "headings": [
+    "Static Pods {#static-pods}",
+    "Mitigations {#static-pods-mitigations}",
+    "The kubelet API {#kubelet-api}",
+    "Mitigations",
+    "The etcd API",
+    "Mitigations {#etcd-api-mitigations}",
+    "Container runtime socket {#runtime-socket}",
+    "Mitigations {#runtime-socket-mitigations}"
+   ],
+   "links_out": [
+    "storage/volumes.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "security/application-security-checklist.md",
+   "title": "Application Security Checklist",
+   "words": 857,
+   "headings": [
+    "Base security hardening",
+    "Application design",
+    "Service account",
+    "Pod-level `securityContext` recommendations {#security-context-pod}",
+    "Container-level `securityContext` recommendations {#security-context-container}",
+    "Role Based Access Control (RBAC) {#rbac}",
+    "Image security",
+    "Network policies",
+    "Advanced security hardening {#advanced}",
+    "Linux container security",
+    "Runtime classes"
+   ],
+   "links_out": [
+    "security/pod-security-standards.md",
+    "security/rbac-good-practices.md",
+    "services-networking/network-policies.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "security/cloud-native-security.md",
+   "title": "The section index lists this explicitly",
+   "words": 1379,
+   "headings": [
+    "Cloud native information security",
+    "_Develop_ lifecycle phase {#lifecycle-phase-develop}",
+    "_Distribute_ lifecycle phase {#lifecycle-phase-distribute}",
+    "_Deploy_ lifecycle phase {#lifecycle-phase-deploy}",
+    "_Runtime_ lifecycle phase {#lifecycle-phase-runtime}",
+    "Runtime protection: access {#protection-runtime-access}",
+    "Runtime protection: compute {#protection-runtime-compute}",
+    "Runtime protection: storage {#protection-runtime-storage}",
+    "Networking and security",
+    "Observability and runtime security",
+    "{{% heading \"whatsnext\" %}}",
+    "Cloud native security {#further-reading-cloud-native}"
+   ],
+   "links_out": [
+    "containers/images.md",
+    "security/security-checklist.md",
+    "security/controlling-access.md",
+    "security/service-accounts.md",
+    "security/pod-security-standards.md",
+    "policy/resource-quotas.md",
+    "policy/limit-range.md",
+    "scheduling-eviction/assign-pod-node.md",
+    "services-networking/network-policies.md",
+    "configuration/secret.md",
+    "containers/runtime-class.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "security/controlling-access.md",
+   "title": "Controlling Access to the Kubernetes API",
+   "words": 1025,
+   "headings": [
+    "Transport security",
+    "Authentication",
+    "Authorization",
+    "Admission control",
+    "Auditing",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/kubernetes-api.md",
+    "configuration/secret.md"
+   ],
+   "links_in": 5
+  },
+  {
+   "path": "security/linux-kernel-security-constraints.md",
+   "title": "Linux kernel security constraints for Pods and containers",
+   "words": 1975,
+   "headings": [
+    "Run workloads without root privileges {#run-without-root}",
+    "Security features in the Linux kernel {#linux-security-features}",
+    "seccomp",
+    "AppArmor and SELinux: policy-based mandatory access control {#policy-based-mac}",
+    "Summary of features {#summary}",
+    "Considerations for managing custom configurations {#considerations-custom-configurations}",
+    "Kernel-level security features and privileged containers {#kernel-security-features-privileged-containers}",
+    "Privileged containers {#privileged-containers}",
+    "Recommendations and best practices {#recommendations-best-practices}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "security/security-checklist.md",
+    "workloads/pods/user-namespaces.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "security/linux-security.md",
+   "title": "Security For Linux Nodes",
+   "words": 138,
+   "headings": [
+    "Protection for Secret data on nodes"
+   ],
+   "links_out": [
+    "configuration/secret.md",
+    "storage/volumes.md",
+    "cluster-administration/swap-memory-management.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "security/multi-tenancy.md",
+   "title": "Multi-tenancy",
+   "words": 4281,
+   "headings": [
+    "Use cases",
+    "Multiple teams",
+    "Multiple customers",
+    "Terminology",
+    "Tenants",
+    "Isolation",
+    "Control plane isolation",
+    "Namespaces",
+    "Access controls",
+    "Quotas",
+    "Data Plane Isolation",
+    "Network isolation"
+   ],
+   "links_out": [
+    "policy/resource-quotas.md",
+    "services-networking/network-policies.md",
+    "extend-kubernetes/compute-storage-net/network-plugins.md",
+    "storage/dynamic-provisioning.md",
+    "storage/storage-classes.md",
+    "storage/persistent-volumes.md",
+    "scheduling-eviction/assign-pod-node.md",
+    "cluster-administration/flow-control.md",
+    "configuration/manage-resources-containers.md",
+    "scheduling-eviction/pod-priority-preemption.md",
+    "extend-kubernetes/operator.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "security/pod-security-admission.md",
+   "title": "The per-mode level label indicates which policy level to apply for the mode.",
+   "words": 946,
+   "headings": [
+    "Built-in Pod Security admission enforcement",
+    "Pod Security levels",
+    "Pod Security Admission labels for namespaces",
+    "Workload resources and Pod templates",
+    "Exemptions",
+    "Metrics",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "security/pod-security-standards.md"
+   ],
+   "links_in": 4
+  },
+  {
+   "path": "security/pod-security-policy.md",
+   "title": "Pod Security Policies",
+   "words": 113,
+   "headings": [],
+   "links_out": [
+    "security/pod-security-admission.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "security/pod-security-standards.md",
+   "title": "Pod Security Standards",
+   "words": 1922,
+   "headings": [
+    "Profile Details",
+    "Privileged",
+    "Baseline",
+    "Restricted",
+    "Policy Instantiation",
+    "Alternatives",
+    "Pod OS field",
+    "Restricted Pod Security Standard changes",
+    "User namespaces",
+    "FAQ",
+    "Why isn't there a profile between Privileged and Baseline?",
+    "What's the difference between a security profile and a security context?"
+   ],
+   "links_out": [
+    "security/pod-security-admission.md",
+    "windows/intro.md",
+    "workloads/pods/user-namespaces.md",
+    "security/pod-security-policy.md"
+   ],
+   "links_in": 7
+  },
+  {
+   "path": "security/rbac-good-practices.md",
+   "title": "Role Based Access Control Good Practices",
+   "words": 1657,
+   "headings": [
+    "General good practice",
+    "Least privilege",
+    "Minimize distribution of privileged tokens",
+    "Hardening",
+    "Periodic review",
+    "Kubernetes RBAC - privilege escalation risks {#privilege-escalation-risks}",
+    "Listing secrets",
+    "Workload creation",
+    "Persistent volume creation",
+    "Access to `proxy` subresource of Nodes",
+    "Escalate verb",
+    "Bind verb"
+   ],
+   "links_out": [
+    "scheduling-eviction/taint-and-toleration.md",
+    "scheduling-eviction/assign-pod-node.md",
+    "security/pod-security-admission.md",
+    "policy/resource-quotas.md"
+   ],
+   "links_in": 3
+  },
+  {
+   "path": "security/secrets-good-practices.md",
+   "title": "Good practices for Kubernetes Secrets",
+   "words": 711,
+   "headings": [
+    "Cluster administrators",
+    "Configure encryption at rest",
+    "Configure least-privilege access to Secrets {#least-privilege-secrets}",
+    "Improve etcd management policies",
+    "Configure access to external Secrets",
+    "Good practices for using swap memory",
+    "Developers",
+    "Restrict Secret access to specific containers",
+    "Protect Secret data after reading",
+    "Avoid sharing Secret manifests"
+   ],
+   "links_out": [
+    "security/rbac-good-practices.md",
+    "cluster-administration/swap-memory-management.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "security/security-checklist.md",
+   "title": "Security Checklist",
+   "words": 2833,
+   "headings": [
+    "Authentication & Authorization",
+    "Network security",
+    "Pod security",
+    "Enabling Seccomp",
+    "Enabling AppArmor or SELinux",
+    "Logs and auditing",
+    "Pod placement",
+    "Secrets",
+    "Images",
+    "Admission controllers",
+    "What's next"
+   ],
+   "links_out": [
+    "security/rbac-good-practices.md",
+    "extend-kubernetes/compute-storage-net/network-plugins.md",
+    "services-networking/network-policies.md",
+    "security/pod-security-standards.md",
+    "security/pod-security-admission.md",
+    "configuration/manage-resources-containers.md",
+    "scheduling-eviction/assign-pod-node.md",
+    "scheduling-eviction/taint-and-toleration.md",
+    "containers/runtime-class.md",
+    "storage/volumes.md",
+    "security/multi-tenancy.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "security/service-accounts.md",
+   "title": "Service Accounts",
+   "words": 2350,
+   "headings": [
+    "What are service accounts? {#what-are-service-accounts}",
+    "Default service accounts {#default-service-accounts}",
+    "Use cases for Kubernetes service accounts {#use-cases}",
+    "How to use service accounts {#how-to-use}",
+    "Grant permissions to a ServiceAccount {#grant-permissions}",
+    "Assign a ServiceAccount to a Pod {#assign-to-pod}",
+    "Restricting access to Secrets (deprecated) {#enforce-mountable-secrets}",
+    "Authenticating service account credentials {#authenticating-credentials}",
+    "Authenticating service account credentials in your own code {#authenticating-in-code}",
+    "Alternatives",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "storage/projected-volumes.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "security/windows-security.md",
+   "title": "Security For Windows Nodes",
+   "words": 267,
+   "headings": [
+    "Protection for Secret data on nodes",
+    "Container users",
+    "Pod-level security isolation"
+   ],
+   "links_out": [
+    "security/pod-security-policy.md",
+    "windows/intro.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "security/hardening-guide/authentication-mechanisms.md",
+   "title": "Hardening Guide - Authentication Mechanisms",
+   "words": 1223,
+   "headings": [
+    "X.509 client certificate authentication {#x509-client-certificate-authentication}",
+    "Static token file {#static-token-file}",
+    "Bootstrap tokens {#bootstrap-tokens}",
+    "ServiceAccount secret tokens {#serviceaccount-secret-tokens}",
+    "TokenRequest API tokens {#tokenrequest-api-tokens}",
+    "OpenID Connect token authentication {#openid-connect-token-authentication}",
+    "Webhook token authentication {#webhook-token-authentication}",
+    "Authenticating proxy {#authenticating-proxy}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [],
+   "links_in": 0
+  },
+  {
+   "path": "security/hardening-guide/dynamic-resource-allocation.md",
+   "title": "Hardening Guide - Dynamic Resource Allocation",
+   "words": 401,
+   "headings": [
+    "Harden DRA status update permissions",
+    "Node-aware DRA verbs",
+    "Example RBAC patterns",
+    "Scheduler and allocation controller permissions",
+    "Node-local DRA driver permissions",
+    "Multi-node status controller permissions",
+    "Related cluster administrator task",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [],
+   "links_in": 0
+  },
+  {
+   "path": "security/hardening-guide/scheduler.md",
+   "title": "Hardening Guide - Scheduler Configuration",
+   "words": 801,
+   "headings": [
+    "kube-scheduler configuration",
+    "Scheduler authentication & authorization command line options",
+    "Scheduler networking command line options",
+    "Scheduler TLS command line options",
+    "Scheduling configurations for custom schedulers",
+    "Key considerations",
+    "Disallow labeling nodes"
+   ],
+   "links_out": [],
+   "links_in": 0
+  },
+  {
+   "path": "services-networking/_index.md",
+   "title": "Services, Load Balancing, and Networking",
+   "words": 724,
+   "headings": [
+    "The Kubernetes network model",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "architecture/nodes.md",
+    "services-networking/service.md",
+    "services-networking/endpoint-slices.md",
+    "services-networking/gateway.md",
+    "services-networking/ingress.md",
+    "services-networking/network-policies.md",
+    "containers/cri.md",
+    "cluster-administration/addons.md",
+    "cluster-administration/networking.md",
+    "services-networking/dns-pod-service.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "services-networking/cluster-ip-allocation.md",
+   "title": "Service ClusterIP allocation",
+   "words": 668,
+   "headings": [
+    "How Service ClusterIPs are allocated?",
+    "Why do you need to reserve Service Cluster IPs?",
+    "How can you avoid Service ClusterIP conflicts? {#avoid-ClusterIP-conflict}",
+    "Examples {#allocation-examples}",
+    "Example 1 {#allocation-example-1}",
+    "Example 2 {#allocation-example-2}",
+    "Example 3 {#allocation-example-3}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "services-networking/service.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "services-networking/dns-pod-service.md",
+   "title": "DNS for Services and Pods",
+   "words": 2113,
+   "headings": [
+    "Namespaces of Services",
+    "DNS Records",
+    "Services",
+    "A/AAAA records",
+    "SRV records",
+    "Pods",
+    "A/AAAA records",
+    "Pod's hostname and subdomain fields {#pod-hostname-and-subdomain-field}",
+    "Pod's setHostnameAsFQDN field {#pod-sethostnameasfqdn-field}",
+    "Pod's DNS Policy",
+    "Pod's DNS Config {#pod-dns-config}",
+    "DNS search domain list limits"
+   ],
+   "links_out": [
+    "services-networking/service.md"
+   ],
+   "links_in": 8
+  },
+  {
+   "path": "services-networking/dual-stack.md",
+   "title": "IPv4/IPv6 dual-stack",
+   "words": 1550,
+   "headings": [
+    "Supported Features",
+    "Prerequisites",
+    "Configure IPv4/IPv6 dual-stack",
+    "Services",
+    "Dual-stack Service configuration scenarios",
+    "Headless Services without selector",
+    "Service type LoadBalancer",
+    "Egress traffic",
+    "Windows support",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "extend-kubernetes/compute-storage-net/network-plugins.md",
+    "services-networking/service.md",
+    "services-networking/windows-networking.md"
+   ],
+   "links_in": 3
+  },
+  {
+   "path": "services-networking/endpoint-slices.md",
+   "title": "EndpointSlices",
+   "words": 1337,
+   "headings": [
+    "EndpointSlice API {#endpointslice-resource}",
+    "Address types",
+    "Conditions",
+    "Topology information {#topology}",
+    "Management",
+    "Ownership",
+    "Distribution of EndpointSlices",
+    "Duplicate endpoints",
+    "EndpointSlice mirroring",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/working-with-objects/names.md"
+   ],
+   "links_in": 3
+  },
+  {
+   "path": "services-networking/gateway.md",
+   "title": "Gateway API",
+   "words": 1514,
+   "headings": [
+    "Design principles",
+    "Resource model",
+    "GatewayClass {#api-kind-gateway-class}",
+    "Gateway {#api-kind-gateway}",
+    "HTTPRoute {#api-kind-httproute}",
+    "GRPCRoute {#api-kind-grpcroute}",
+    "Request flow",
+    "Conformance",
+    "Migrating from Ingress",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "services-networking/service.md",
+    "extend-kubernetes/api-extension/custom-resources.md",
+    "services-networking/ingress.md"
+   ],
+   "links_in": 3
+  },
+  {
+   "path": "services-networking/ingress-controllers.md",
+   "title": "Ingress Controllers",
+   "words": 762,
+   "headings": [
+    "Ingress controllers",
+    "Third party ingress controllers",
+    "Using multiple Ingress controllers",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "services-networking/ingress.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "services-networking/ingress.md",
+   "title": "Ingress",
+   "words": 3416,
+   "headings": [
+    "Terminology",
+    "What is Ingress?",
+    "Prerequisites",
+    "The Ingress resource",
+    "Ingress rules",
+    "DefaultBackend {#default-backend}",
+    "Resource backends {#resource-backend}",
+    "Path types",
+    "Examples",
+    "Hostname wildcards",
+    "Ingress class",
+    "IngressClass scope"
+   ],
+   "links_out": [
+    "cluster-administration/networking.md",
+    "services-networking/ingress-controllers.md",
+    "services-networking/service.md",
+    "overview/working-with-objects/names.md",
+    "workloads/management.md",
+    "overview/working-with-objects/annotations.md"
+   ],
+   "links_in": 6
+  },
+  {
+   "path": "services-networking/network-policies.md",
+   "title": "Network Policies",
+   "words": 3362,
+   "headings": [
+    "Prerequisites",
+    "The two sorts of pod isolation",
+    "The NetworkPolicy resource {#networkpolicy-resource}",
+    "Behavior of `to` and `from` selectors",
+    "Default policies",
+    "Default deny all ingress traffic",
+    "Allow all ingress traffic",
+    "Default deny all egress traffic",
+    "Allow all egress traffic",
+    "Default deny all ingress and all egress traffic",
+    "Network traffic filtering",
+    "Targeting a range of ports"
+   ],
+   "links_out": [
+    "extend-kubernetes/compute-storage-net/network-plugins.md",
+    "overview/working-with-objects/object-management.md",
+    "workloads/pods/init-containers.md"
+   ],
+   "links_in": 10
+  },
+  {
+   "path": "services-networking/service-traffic-policy.md",
+   "title": "Service Internal Traffic Policy",
+   "words": 307,
+   "headings": [
+    "Using Service Internal Traffic Policy",
+    "How it works",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "services-networking/topology-aware-routing.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "services-networking/service.md",
+   "title": "Service",
+   "words": 6239,
+   "headings": [
+    "Services in Kubernetes",
+    "Cloud-native service discovery",
+    "Defining a Service",
+    "Port definitions {#field-spec-ports}",
+    "Services without selectors",
+    "EndpointSlices",
+    "Endpoints (deprecated) {#endpoints}",
+    "Application protocol",
+    "Multi-port Services",
+    "Service type  {#publishing-services-service-types}",
+    "`type: ClusterIP` {#type-clusterip}",
+    "`type: NodePort` {#type-nodeport}"
+   ],
+   "links_out": [
+    "services-networking/ingress.md",
+    "overview/working-with-objects/names.md",
+    "services-networking/endpoint-slices.md",
+    "services-networking/dns-pod-service.md",
+    "cluster-administration/addons.md",
+    "services-networking/gateway.md"
+   ],
+   "links_in": 18
+  },
+  {
+   "path": "services-networking/topology-aware-routing.md",
+   "title": "Topology Aware Routing",
+   "words": 1273,
+   "headings": [
+    "Motivation",
+    "Enabling Topology Aware Routing",
+    "When it works best",
+    "1. Incoming traffic is evenly distributed",
+    "2. The Service has 3 or more endpoints per zone {#three-or-more-endpoints-per-zone}",
+    "How It Works",
+    "EndpointSlice controller {#implementation-control-plane}",
+    "kube-proxy {#implementation-kube-proxy}",
+    "Safeguards",
+    "Constraints",
+    "Custom heuristics",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "services-networking/service.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "services-networking/windows-networking.md",
+   "title": "Networking on Windows",
+   "words": 1618,
+   "headings": [
+    "Container networking on Windows {#networking}",
+    "Network modes",
+    "IP address management (IPAM) {#ipam}",
+    "Direct Server Return (DSR) {#dsr}",
+    "Load balancing and Services",
+    "Limitations"
+   ],
+   "links_out": [
+    "extend-kubernetes/compute-storage-net/network-plugins.md",
+    "services-networking/dual-stack.md"
+   ],
+   "links_in": 3
+  },
+  {
+   "path": "storage/_index.md",
+   "title": "Storage",
+   "words": 21,
+   "headings": [],
+   "links_out": [],
+   "links_in": 0
+  },
+  {
+   "path": "storage/dynamic-provisioning.md",
+   "title": "Dynamic Volume Provisioning",
+   "words": 619,
+   "headings": [
+    "Background",
+    "Enabling Dynamic Provisioning",
+    "Using Dynamic Provisioning",
+    "Defaulting Behavior",
+    "Topology Awareness"
+   ],
+   "links_out": [
+    "storage/persistent-volumes.md",
+    "storage/storage-classes.md",
+    "overview/working-with-objects/names.md"
+   ],
+   "links_in": 3
+  },
+  {
+   "path": "storage/ephemeral-storage.md",
+   "title": "Local ephemeral storage",
+   "words": 1769,
+   "headings": [
+    "Configurations for local ephemeral storage {#configurations}",
+    "Setting requests and limits for local ephemeral storage {#requests-limits}",
+    "How Pods with ephemeral-storage requests are scheduled",
+    "Ephemeral storage consumption management {#resource-emphemeralstorage-consumption}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "storage/volumes.md",
+    "cluster-administration/logging.md",
+    "scheduling-eviction/node-pressure-eviction.md"
+   ],
+   "links_in": 3
+  },
+  {
+   "path": "storage/ephemeral-volumes.md",
+   "title": "Ephemeral Volumes",
+   "words": 1490,
+   "headings": [
+    "Types of ephemeral volumes",
+    "CSI ephemeral volumes",
+    "CSI driver restrictions",
+    "Generic ephemeral volumes",
+    "Lifecycle and PersistentVolumeClaim",
+    "PersistentVolumeClaim naming",
+    "Security",
+    "{{% heading \"whatsnext\" %}}",
+    "Ephemeral volumes managed by kubelet",
+    "CSI ephemeral volumes",
+    "Generic ephemeral volumes"
+   ],
+   "links_out": [
+    "storage/volumes.md",
+    "storage/ephemeral-storage.md",
+    "storage/storage-capacity.md",
+    "storage/volume-snapshots.md",
+    "storage/volume-pvc-datasource.md",
+    "storage/persistent-volumes.md",
+    "architecture/garbage-collection.md",
+    "policy/resource-quotas.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "storage/persistent-volumes.md",
+   "title": "Persistent Volumes",
+   "words": 6796,
+   "headings": [
+    "Introduction",
+    "Lifecycle of a volume and claim",
+    "Provisioning",
+    "Binding",
+    "Using",
+    "Storage Object in Use Protection",
+    "Reclaiming",
+    "PersistentVolume deletion protection finalizer",
+    "Reserving a PersistentVolume",
+    "Expanding Persistent Volumes Claims",
+    "Types of Persistent Volumes",
+    "Persistent Volumes"
+   ],
+   "links_out": [
+    "storage/volumes.md",
+    "storage/storage-classes.md",
+    "storage/volume-attributes-classes.md",
+    "overview/working-with-objects/names.md",
+    "overview/working-with-objects/labels.md",
+    "workloads/pods/pod-lifecycle.md",
+    "storage/volume-snapshots.md",
+    "storage/volume-pvc-datasource.md",
+    "storage/volume-populators-and-data-sources.md"
+   ],
+   "links_in": 16
+  },
+  {
+   "path": "storage/projected-volumes.md",
+   "title": "Projected Volumes",
+   "words": 1600,
+   "headings": [
+    "Introduction",
+    "Example configuration with a secret, a downwardAPI, and a configMap {#example-configuration-secret-downwardapi-configmap}",
+    "Example configuration: secrets with a non-default permission mode set {#example-configuration-secrets-nondefault-permission-mode}",
+    "serviceAccountToken projected volumes {#serviceaccounttoken}",
+    "clusterTrustBundle projected volumes {#clustertrustbundle}",
+    "podCertificate projected volumes {#podcertificate}",
+    "SecurityContext interactions",
+    "Linux",
+    "Windows"
+   ],
+   "links_out": [
+    "storage/volumes.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "storage/storage-capacity.md",
+   "title": "Storage Capacity",
+   "words": 670,
+   "headings": [
+    "{{% heading \"prerequisites\" %}}",
+    "API",
+    "Scheduling",
+    "Rescheduling",
+    "Limitations",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "storage/storage-classes.md",
+    "storage/ephemeral-volumes.md"
+   ],
+   "links_in": 3
+  },
+  {
+   "path": "storage/storage-classes.md",
+   "title": "Storage Classes",
+   "words": 2848,
+   "headings": [
+    "StorageClass objects",
+    "Default StorageClass",
+    "Provisioner",
+    "Reclaim policy",
+    "Volume expansion {#allow-volume-expansion}",
+    "Mount options",
+    "Volume binding mode",
+    "Allowed topologies",
+    "Parameters",
+    "AWS EBS",
+    "AWS EFS",
+    "NFS"
+   ],
+   "links_out": [
+    "storage/volumes.md",
+    "storage/persistent-volumes.md",
+    "configuration/manage-resources-containers.md",
+    "scheduling-eviction/assign-pod-node.md",
+    "scheduling-eviction/taint-and-toleration.md"
+   ],
+   "links_in": 9
+  },
+  {
+   "path": "storage/storage-limits.md",
+   "title": "Node-specific Volume Limits",
+   "words": 773,
+   "headings": [
+    "Kubernetes default limits",
+    "Dynamic volume limits",
+    "Mutable CSI Node Allocatable Count",
+    "Preventing Pod placement without CSI driver",
+    "CSI volume attach limits and cluster autoscaler"
+   ],
+   "links_out": [],
+   "links_in": 1
+  },
+  {
+   "path": "storage/volume-attributes-classes.md",
+   "title": "Volume Attributes Classes",
+   "words": 562,
+   "headings": [
+    "The VolumeAttributesClass API",
+    "Provisioner",
+    "Resizer",
+    "Parameters"
+   ],
+   "links_out": [
+    "storage/storage-classes.md",
+    "storage/volumes.md",
+    "storage/persistent-volumes.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "storage/volume-health-monitoring.md",
+   "title": "Volume Health Monitoring",
+   "words": 333,
+   "headings": [
+    "Volume health monitoring",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [],
+   "links_in": 0
+  },
+  {
+   "path": "storage/volume-populators-and-data-sources.md",
+   "title": "Volume Populators and Data Sources",
+   "words": 966,
+   "headings": [
+    "Volume populators and data sources",
+    "Data source references",
+    "Using volume populators",
+    "Cross namespace data sources",
+    "Using a cross-namespace volume data source",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "storage/persistent-volumes.md",
+    "storage/volume-pvc-datasource.md",
+    "storage/volume-snapshots.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "storage/volume-pvc-datasource.md",
+   "title": "CSI Volume Cloning",
+   "words": 486,
+   "headings": [
+    "Introduction",
+    "Provisioning",
+    "Usage"
+   ],
+   "links_out": [
+    "storage/volumes.md"
+   ],
+   "links_in": 3
+  },
+  {
+   "path": "storage/volume-snapshot-classes.md",
+   "title": "Volume Snapshot Classes",
+   "words": 478,
+   "headings": [
+    "Introduction",
+    "The VolumeSnapshotClass Resource",
+    "VolumeSnapshotClass dependencies",
+    "Driver",
+    "DeletionPolicy",
+    "Parameters"
+   ],
+   "links_out": [
+    "storage/volume-snapshots.md",
+    "storage/storage-classes.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "storage/volume-snapshots.md",
+   "title": "Volume Snapshots",
+   "words": 1311,
+   "headings": [
+    "Introduction",
+    "Lifecycle of a volume snapshot and volume snapshot content",
+    "Provisioning Volume Snapshot",
+    "Binding",
+    "Persistent Volume Claim as Snapshot Source Protection",
+    "Delete",
+    "VolumeSnapshots",
+    "Volume Snapshot Contents",
+    "Converting the volume mode of a Snapshot {#convert-volume-mode}",
+    "Provisioning Volumes from Snapshots"
+   ],
+   "links_out": [
+    "storage/persistent-volumes.md",
+    "storage/volume-snapshot-classes.md"
+   ],
+   "links_in": 4
+  },
+  {
+   "path": "storage/volumes.md",
+   "title": "Volumes",
+   "words": 6585,
+   "headings": [
+    "Why volumes are important",
+    "How volumes work",
+    "Types of volumes {#volume-types}",
+    "configMap",
+    "downwardAPI {#downwardapi}",
+    "emptyDir {#emptydir}",
+    "fc (fibre channel) {#fc}",
+    "gcePersistentDisk (deprecated) {#gcepersistentdisk}",
+    "gitRepo (disabled) {#gitrepo}",
+    "hostPath {#hostpath}",
+    "image",
+    "iscsi"
+   ],
+   "links_out": [
+    "storage/ephemeral-volumes.md",
+    "storage/persistent-volumes.md",
+    "storage/ephemeral-storage.md",
+    "configuration/manage-resources-containers.md",
+    "workloads/pods/init-containers.md",
+    "containers/images.md",
+    "storage/storage-classes.md",
+    "storage/projected-volumes.md",
+    "configuration/secret.md",
+    "containers/cri.md"
+   ],
+   "links_in": 22
+  },
+  {
+   "path": "storage/windows-storage.md",
+   "title": "Windows Storage",
+   "words": 386,
+   "headings": [
+    "Persistent storage {#storage}"
+   ],
+   "links_out": [
+    "storage/volumes.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "windows/_index.md",
+   "title": "Windows in Kubernetes",
+   "words": 161,
+   "headings": [],
+   "links_out": [
+    "services-networking/windows-networking.md",
+    "storage/windows-storage.md",
+    "configuration/windows-resource-management.md",
+    "security/windows-security.md",
+    "windows/user-guide.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "windows/intro.md",
+   "title": "Windows containers in Kubernetes",
+   "words": 2605,
+   "headings": [
+    "Windows nodes in Kubernetes",
+    "Compatibility and limitations {#limitations}",
+    "Comparison with Linux {#compatibility-linux-similarities}",
+    "Command line options for the kubelet {#kubelet-compatibility}",
+    "API compatibility {#api}",
+    "Node problem detector",
+    "Pause container",
+    "Container runtimes {#container-runtime}",
+    "ContainerD",
+    "Mirantis Container Runtime {#mcr}",
+    "Windows OS version compatibility {#windows-os-version-support}",
+    "Hardware recommendations and considerations {#windows-hardware-recommendations}"
+   ],
+   "links_out": [
+    "services-networking/windows-networking.md",
+    "configuration/windows-resource-management.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "windows/user-guide.md",
+   "title": "Guide for Running Windows Containers in Kubernetes",
+   "words": 1632,
+   "headings": [
+    "Objectives",
+    "{{% heading \"prerequisites\" %}}",
+    "Getting Started: Deploying a Windows workload",
+    "Observability",
+    "Capturing logs from workloads",
+    "Configuring container user",
+    "Using configurable Container usernames",
+    "Managing Workload Identity with Group Managed Service Accounts",
+    "Taints and tolerations",
+    "Ensuring OS-specific workloads land on the appropriate container host",
+    "Handling multiple Windows versions in the same cluster",
+    "Simplifying with RuntimeClass"
+   ],
+   "links_out": [
+    "overview/kubectl.md",
+    "services-networking/dns-pod-service.md",
+    "scheduling-eviction/assign-pod-node.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "workloads/_index.md",
+   "title": "Workloads",
+   "words": 777,
+   "headings": [
+    "Workload placement",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "workloads/pods/pod-lifecycle.md",
+    "workloads/controllers/deployment.md",
+    "workloads/controllers/replicaset.md",
+    "workloads/controllers/statefulset.md",
+    "storage/persistent-volumes.md",
+    "workloads/controllers/daemonset.md",
+    "cluster-administration/networking.md",
+    "workloads/controllers/job.md",
+    "workloads/controllers/cron-jobs.md",
+    "extend-kubernetes/api-extension/custom-resources.md",
+    "scheduling-eviction/gang-scheduling.md",
+    "architecture/garbage-collection.md",
+    "workloads/controllers/ttlafterfinished.md",
+    "services-networking/service.md",
+    "services-networking/ingress.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "workloads/autoscaling.md",
+   "title": "Autoscaling Workloads",
+   "words": 821,
+   "headings": [
+    "Scaling workloads manually",
+    "Scaling workloads automatically",
+    "Scaling workloads horizontally",
+    "Scaling workloads vertically",
+    "Autoscaling based on cluster size",
+    "Event driven Autoscaling",
+    "Autoscaling based on schedules",
+    "Scaling cluster infrastructure",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "workloads/autoscaling/horizontal-pod-autoscale.md",
+    "workloads/autoscaling/vertical-pod-autoscale.md",
+    "cluster-administration/node-autoscaling.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "workloads/management.md",
+   "title": "Managing Workloads",
+   "words": 2004,
+   "headings": [
+    "Organizing resource configurations",
+    "External tools",
+    "Bulk operations in kubectl",
+    "Chaining and filtering",
+    "Recursive operations on local files",
+    "Updating your application without an outage",
+    "Managing rollouts",
+    "Canary deployments",
+    "Updating annotations",
+    "Scaling your application",
+    "In-place updates of resources",
+    "kubectl apply"
+   ],
+   "links_out": [
+    "overview/kubectl.md",
+    "workloads/controllers/deployment.md",
+    "overview/working-with-objects/annotations.md",
+    "workloads/autoscaling/horizontal-pod-autoscale.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "workloads/resource-managers.md",
+   "title": "Resource managers",
+   "words": 3838,
+   "headings": [
+    "Topology manager",
+    "CPU manager",
+    "Policies for assigning CPUs to Pods",
+    "Memory manager",
+    "Policies for assigning memory to Pods {#memory-management-policies}",
+    "Device manager",
+    "Pod-level resource managers {#pod-level-resource-managers}",
+    "Glossary",
+    "How pod-level resource managers work",
+    "Observability and metrics",
+    "Limitations and caveats",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "workloads/pods/pod-qos.md",
+    "extend-kubernetes/compute-storage-net/device-plugins.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "workloads/autoscaling/horizontal-pod-autoscale.md",
+   "title": "Horizontal Pod Autoscaling",
+   "words": 4512,
+   "headings": [
+    "How does a HorizontalPodAutoscaler work?",
+    "Algorithm details",
+    "Pod readiness and autoscaling metrics",
+    "Key behaviors for pod readiness {#pod-readiness-key-behaviors}",
+    "Good practice for pod readiness {#pod-readiness-good-practices}",
+    "API object",
+    "Stability of workload scale {#flapping}",
+    "Autoscaling during rolling update",
+    "Support for resource metrics",
+    "Container resource metrics",
+    "Scaling on custom metrics",
+    "Scaling on multiple metrics"
+   ],
+   "links_out": [
+    "configuration/manage-resources-containers.md",
+    "workloads/pods/pod-lifecycle.md",
+    "overview/working-with-objects/names.md",
+    "workloads/controllers/deployment.md",
+    "cluster-administration/node-autoscaling.md",
+    "workloads/autoscaling/vertical-pod-autoscale.md"
+   ],
+   "links_in": 6
+  },
+  {
+   "path": "workloads/autoscaling/vertical-pod-autoscale.md",
+   "title": "Vertical Pod Autoscaling",
+   "words": 1701,
+   "headings": [
+    "API object",
+    "How does a VerticalPodAutoscaler work?",
+    "Update modes",
+    "Off {#updateMode-Off}",
+    "Initial {#updateMode-Initial}",
+    "Recreate {#updateMode-Recreate}",
+    "InPlaceOrRecreate {#updateMode-InPlaceOrRecreate}",
+    "InPlace {#updateMode-InPlace}",
+    "Auto (deprecated) {#updateMode-Auto}",
+    "Resource policies",
+    "controlledValues",
+    "LimitRange resources"
+   ],
+   "links_out": [
+    "configuration/manage-resources-containers.md",
+    "workloads/pods/pod-lifecycle.md",
+    "policy/limit-range.md",
+    "cluster-administration/node-autoscaling.md",
+    "workloads/autoscaling/horizontal-pod-autoscale.md"
+   ],
+   "links_in": 4
+  },
+  {
+   "path": "workloads/controllers/_index.md",
+   "title": "Workload Management",
+   "words": 484,
+   "headings": [],
+   "links_out": [
+    "workloads/controllers/deployment.md",
+    "workloads/controllers/replicaset.md",
+    "workloads/controllers/statefulset.md",
+    "storage/persistent-volumes.md",
+    "workloads/controllers/daemonset.md",
+    "cluster-administration/networking.md",
+    "workloads/controllers/job.md",
+    "workloads/controllers/cron-jobs.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "workloads/controllers/cron-jobs.md",
+   "title": "┌───────────── minute (0 - 59)",
+   "words": 2115,
+   "headings": [
+    "Example",
+    "Writing a CronJob spec",
+    "Schedule syntax",
+    "Job template",
+    "Deadline for delayed Job start {#starting-deadline}",
+    "Concurrency policy",
+    "Schedule suspension",
+    "Jobs history limits",
+    "Time zones",
+    "CronJob limitations {#cron-job-limitations}",
+    "Unsupported TimeZone specification",
+    "Modifying a CronJob"
+   ],
+   "links_out": [
+    "overview/working-with-objects/names.md",
+    "workloads/controllers/job.md"
+   ],
+   "links_in": 3
+  },
+  {
+   "path": "workloads/controllers/daemonset.md",
+   "title": "DaemonSet",
+   "words": 1864,
+   "headings": [
+    "Writing a DaemonSet Spec",
+    "Create a DaemonSet",
+    "Required Fields",
+    "Pod Template",
+    "Pod Selector",
+    "Running Pods on select Nodes",
+    "How Daemon Pods are scheduled",
+    "Taints and tolerations",
+    "Communicating with Daemon Pods",
+    "Updating a DaemonSet",
+    "Alternatives to DaemonSet",
+    "Init scripts"
+   ],
+   "links_out": [
+    "overview/working-with-objects/object-management.md",
+    "overview/working-with-objects/names.md",
+    "workloads/pods/pod-lifecycle.md",
+    "workloads/controllers/job.md",
+    "workloads/controllers/replicationcontroller.md",
+    "scheduling-eviction/assign-pod-node.md",
+    "scheduling-eviction/pod-priority-preemption.md",
+    "cluster-administration/networking.md",
+    "services-networking/service.md",
+    "services-networking/service-traffic-policy.md",
+    "workloads/controllers/deployment.md",
+    "extend-kubernetes/compute-storage-net/network-plugins.md",
+    "extend-kubernetes/compute-storage-net/device-plugins.md",
+    "cluster-administration/addons.md"
+   ],
+   "links_in": 10
+  },
+  {
+   "path": "workloads/controllers/deployment.md",
+   "title": "Deployments",
+   "words": 7732,
+   "headings": [
+    "Use Case",
+    "Creating a Deployment",
+    "Pod-template-hash label",
+    "Updating a Deployment",
+    "Rollover (aka multiple updates in-flight)",
+    "Label selector updates",
+    "Rolling Back a Deployment",
+    "Checking Rollout History of a Deployment",
+    "Rolling Back to a Previous Revision",
+    "Scaling a Deployment",
+    "Proportional scaling",
+    "Pausing and Resuming a rollout of a Deployment {#pausing-and-resuming-a-deployment}"
+   ],
+   "links_out": [
+    "workloads/autoscaling/horizontal-pod-autoscale.md",
+    "workloads/management.md",
+    "overview/working-with-objects/object-management.md",
+    "overview/working-with-objects/names.md",
+    "workloads/pods/pod-lifecycle.md",
+    "overview/working-with-objects/labels.md",
+    "workloads/controllers/statefulset.md",
+    "workloads/pods/disruptions.md"
+   ],
+   "links_in": 14
+  },
+  {
+   "path": "workloads/controllers/job.md",
+   "title": "Jobs",
+   "words": 8403,
+   "headings": [
+    "Running an example Job",
+    "Writing a Job spec",
+    "Job Labels",
+    "Pod Template",
+    "Pod selector",
+    "Parallel execution for Jobs {#parallel-jobs}",
+    "Completion mode",
+    "Integrate with Workload APIs",
+    "Qualifying criteria",
+    "Opt-out for higher-level controllers",
+    "CronJob behavior",
+    "Limitations for Alpha release {#workload-integration-limitations}"
+   ],
+   "links_out": [
+    "workloads/controllers/cron-jobs.md",
+    "overview/working-with-objects/names.md",
+    "workloads/pods/pod-lifecycle.md",
+    "scheduling-eviction/gang-scheduling.md",
+    "workloads/workload-api/policies.md",
+    "workloads/pods/init-containers.md",
+    "workloads/controllers/ttlafterfinished.md",
+    "policy/limit-range.md",
+    "policy/resource-quotas.md",
+    "services-networking/service.md",
+    "scheduling-eviction/pod-scheduling-readiness.md",
+    "workloads/controllers/replicationcontroller.md"
+   ],
+   "links_in": 14
+  },
+  {
+   "path": "workloads/controllers/replicaset.md",
+   "title": "NOTE TO LOCALIZATION TEAMS",
+   "words": 2551,
+   "headings": [
+    "How a ReplicaSet works",
+    "When to use a ReplicaSet",
+    "Example",
+    "Non-Template Pod acquisitions",
+    "Writing a ReplicaSet manifest",
+    "Pod Template",
+    "Pod Selector",
+    "Replicas",
+    "Working with ReplicaSets",
+    "Deleting a ReplicaSet and its Pods",
+    "Deleting just a ReplicaSet",
+    "Terminating Pods"
+   ],
+   "links_out": [
+    "architecture/garbage-collection.md",
+    "overview/working-with-objects/names.md",
+    "workloads/pods/pod-lifecycle.md",
+    "overview/working-with-objects/labels.md",
+    "workloads/controllers/deployment.md",
+    "workloads/autoscaling/horizontal-pod-autoscale.md",
+    "workloads/controllers/job.md",
+    "workloads/controllers/daemonset.md",
+    "workloads/controllers/replicationcontroller.md",
+    "workloads/pods/disruptions.md"
+   ],
+   "links_in": 5
+  },
+  {
+   "path": "workloads/controllers/replicationcontroller.md",
+   "title": "ReplicationController",
+   "words": 2437,
+   "headings": [
+    "How a ReplicationController works",
+    "Running an example ReplicationController",
+    "Writing a ReplicationController Manifest",
+    "Pod Template",
+    "Labels on the ReplicationController",
+    "Pod Selector",
+    "Multiple Replicas",
+    "Working with ReplicationControllers",
+    "Deleting a ReplicationController and its Pods",
+    "Deleting only a ReplicationController",
+    "Isolating pods from a ReplicationController",
+    "Common usage patterns"
+   ],
+   "links_out": [
+    "workloads/controllers/deployment.md",
+    "workloads/controllers/replicaset.md",
+    "overview/working-with-objects/names.md",
+    "overview/working-with-objects/object-management.md",
+    "workloads/pods/pod-lifecycle.md",
+    "overview/working-with-objects/labels.md",
+    "workloads/controllers/job.md",
+    "workloads/controllers/daemonset.md"
+   ],
+   "links_in": 4
+  },
+  {
+   "path": "workloads/controllers/statefulset.md",
+   "title": "StatefulSets",
+   "words": 3543,
+   "headings": [
+    "Using StatefulSets",
+    "Limitations",
+    "Components",
+    "Pod Selector",
+    "Volume Claim Templates",
+    "Minimum ready seconds",
+    "Pod Identity",
+    "Ordinal Index",
+    "Start ordinal",
+    "Stable Network ID",
+    "Stable Storage",
+    "Pod Name Label"
+   ],
+   "links_out": [
+    "workloads/controllers/deployment.md",
+    "workloads/controllers/replicaset.md",
+    "storage/dynamic-provisioning.md",
+    "services-networking/service.md",
+    "storage/persistent-volumes.md",
+    "overview/working-with-objects/names.md",
+    "workloads/pods/pod-lifecycle.md",
+    "services-networking/dns-pod-service.md",
+    "overview/working-with-objects/owners-dependents.md",
+    "workloads/autoscaling/horizontal-pod-autoscale.md",
+    "workloads/pods/disruptions.md"
+   ],
+   "links_in": 4
+  },
+  {
+   "path": "workloads/controllers/ttlafterfinished.md",
+   "title": "Automatic Cleanup for Finished Jobs",
+   "words": 542,
+   "headings": [
+    "Cleanup for finished Jobs",
+    "Caveats",
+    "Updating TTL for finished Jobs",
+    "Time skew",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "workloads/controllers/job.md",
+    "architecture/garbage-collection.md",
+    "overview/working-with-objects/finalizers.md"
+   ],
+   "links_in": 3
+  },
+  {
+   "path": "workloads/podgroup-api/_index.md",
+   "title": "PodGroup API",
+   "words": 795,
+   "headings": [
+    "What is a PodGroup?",
+    "API structure",
+    "Scheduling policy",
+    "Template reference",
+    "Requesting DRA devices for a PodGroup",
+    "Status",
+    "Creating a PodGroup",
+    "How it fits together",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "workloads/workload-api/policies.md",
+    "workloads/podgroup-api/lifecycle.md",
+    "workloads/controllers/job.md",
+    "workloads/pods/scheduling-group.md",
+    "scheduling-eviction/gang-scheduling.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "workloads/podgroup-api/lifecycle.md",
+   "title": "PodGroup Lifecycle",
+   "words": 467,
+   "headings": [
+    "Ownership and lifecycle",
+    "Creation ordering",
+    "Deletion protection",
+    "Controller-managed and user-managed PodGroups",
+    "Limitations",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/working-with-objects/names.md",
+    "workloads/pods/scheduling-group.md",
+    "scheduling-eviction/gang-scheduling.md",
+    "workloads/workload-api/policies.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "workloads/pods/_index.md",
+   "title": "Pods",
+   "words": 3467,
+   "headings": [
+    "What is a Pod?",
+    "Using Pods",
+    "Workload resources for managing pods",
+    "Working with Pods",
+    "Pod OS",
+    "Pods and controllers",
+    "Specifying a scheduling group",
+    "Pod templates",
+    "Pod update and replacement",
+    "Pod subresources",
+    "Pod generation",
+    "Resource sharing and communication"
+   ],
+   "links_out": [
+    "overview/working-with-objects/names.md",
+    "security/pod-security-standards.md",
+    "workloads/pods/scheduling-group.md",
+    "workloads/controllers/deployment.md",
+    "workloads/controllers/job.md",
+    "workloads/controllers/daemonset.md",
+    "workloads/pods/ephemeral-containers.md",
+    "cluster-administration/networking.md",
+    "workloads/pods/advanced-pod-config.md",
+    "security/linux-kernel-security-constraints.md",
+    "configuration/manage-resources-containers.md",
+    "workloads/pods/static-pods.md",
+    "workloads/pods/sidecar-containers.md",
+    "workloads/pods/pod-lifecycle.md",
+    "workloads/pods/disruptions.md",
+    "scheduling-eviction/topology-spread-constraints.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "workloads/pods/advanced-pod-config.md",
+   "title": "Advanced Pod Configuration",
+   "words": 1094,
+   "headings": [
+    "PriorityClasses",
+    "Defining a PriorityClass",
+    "Specify pod priority using a PriorityClass",
+    "Built-in PriorityClasses",
+    "RuntimeClasses",
+    "Example Pod {#runtimeclass-pod-example}",
+    "Pod and container level security context configuration {#security-context}",
+    "Pod-wide `securityContext` {#pod-level-security-context}",
+    "Container-level security context {#container-level-security-context}",
+    "Security context options",
+    "Influencing Pod scheduling decisions {#scheduling}",
+    "Node selectors"
+   ],
+   "links_out": [
+    "scheduling-eviction/pod-priority-preemption.md",
+    "containers/runtime-class.md",
+    "security/linux-kernel-security-constraints.md",
+    "scheduling-eviction/assign-pod-node.md",
+    "scheduling-eviction/pod-overhead.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "workloads/pods/disruptions.md",
+   "title": "Disruptions",
+   "words": 2199,
+   "headings": [
+    "Voluntary and involuntary disruptions",
+    "Dealing with disruptions",
+    "Pod disruption budgets",
+    "PodDisruptionBudget example {#pdb-example}",
+    "Pod disruption conditions {#pod-disruption-conditions}",
+    "Separating Cluster Owner and Application Owner Roles",
+    "How to perform Disruptive Actions on your Cluster",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "scheduling-eviction/node-pressure-eviction.md",
+    "cluster-administration/node-autoscaling.md",
+    "scheduling-eviction/assign-pod-node.md",
+    "scheduling-eviction/pod-priority-preemption.md",
+    "workloads/pods/pod-lifecycle.md",
+    "architecture/nodes.md",
+    "configuration/manage-resources-containers.md",
+    "workloads/controllers/job.md",
+    "workloads/controllers/deployment.md"
+   ],
+   "links_in": 8
+  },
+  {
+   "path": "workloads/pods/downward-api.md",
+   "title": "Downward API",
+   "words": 720,
+   "headings": [
+    "Available fields",
+    "Information available via `fieldRef` {#downwardapi-fieldRef}",
+    "Information available via `resourceFieldRef` {#downwardapi-resourceFieldRef}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "configuration/manage-resources-containers.md",
+    "storage/volumes.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "workloads/pods/ephemeral-containers.md",
+   "title": "Ephemeral Containers",
+   "words": 435,
+   "headings": [
+    "Understanding ephemeral containers",
+    "What is an ephemeral container?",
+    "Uses for ephemeral containers",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [],
+   "links_in": 2
+  },
+  {
+   "path": "workloads/pods/init-containers.md",
+   "title": "Init Containers",
+   "words": 2098,
+   "headings": [
+    "Understanding init containers",
+    "Differences from regular containers",
+    "Differences from sidecar containers",
+    "Using init containers",
+    "Examples",
+    "Detailed behavior",
+    "Resource sharing within containers",
+    "Init containers and Linux cgroups {#cgroups}",
+    "Pod restart reasons",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "workloads/pods/sidecar-containers.md",
+    "storage/volumes.md",
+    "workloads/pods/pod-lifecycle.md",
+    "overview/kubectl.md"
+   ],
+   "links_in": 6
+  },
+  {
+   "path": "workloads/pods/pod-condition.md",
+   "title": "Pod Conditions",
+   "words": 1800,
+   "headings": [
+    "Structure of a Pod condition",
+    "Built-in Pod conditions {#built-in-pod-conditions}",
+    "Lifecycle Pod conditions {#lifecycle-pod-conditions}",
+    "PodReadyToStartContainers {#pod-ready-to-start-containers}",
+    "Other Pod conditions {#other-pod-conditions}",
+    "DisruptionTarget {#disruption-target}",
+    "PodResizePending and PodResizeInProgress {#pod-resize-conditions}",
+    "Enhanced Pod readiness",
+    "Status for Pod readiness",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "workloads/pods/pod-lifecycle.md",
+    "workloads/pods/init-containers.md",
+    "workloads/pods/probes.md",
+    "services-networking/service.md",
+    "scheduling-eviction/pod-priority-preemption.md",
+    "architecture/nodes.md",
+    "configuration/manage-resources-containers.md",
+    "workloads/controllers/job.md",
+    "workloads/pods/disruptions.md",
+    "overview/working-with-objects/labels.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "workloads/pods/pod-hostname.md",
+   "title": "Pod Hostname",
+   "words": 697,
+   "headings": [
+    "Default Pod hostname",
+    "Hostname with pod's hostname and subdomain fields",
+    "Hostname with pod's setHostnameAsFQDN fields",
+    "Hostname with pod's hostnameOverride"
+   ],
+   "links_out": [
+    "services-networking/dns-pod-service.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "workloads/pods/pod-lifecycle.md",
+   "title": "Pod Lifecycle",
+   "words": 7756,
+   "headings": [
+    "Pod lifetime",
+    "Pods and fault recovery {#pod-fault-recovery}",
+    "Associated lifetimes",
+    "Pod phase",
+    "Container states",
+    "`Waiting` {#container-state-waiting}",
+    "`Running` {#container-state-running}",
+    "`Terminated` {#container-state-terminated}",
+    "How Pods handle problems with containers {#container-restarts}",
+    "Container restarts {#restart-policy}",
+    "Reduced container restart delay",
+    "Configurable container restart delay"
+   ],
+   "links_out": [
+    "overview/working-with-objects/names.md",
+    "scheduling-eviction/pod-scheduling-readiness.md",
+    "workloads/pods/sidecar-containers.md",
+    "storage/volumes.md",
+    "containers/container-lifecycle-hooks.md",
+    "workloads/pods/init-containers.md",
+    "overview/working-with-objects/labels.md",
+    "workloads/pods/pod-qos.md",
+    "workloads/pods/disruptions.md",
+    "workloads/autoscaling/vertical-pod-autoscale.md",
+    "workloads/pods/probes.md",
+    "services-networking/endpoint-slices.md",
+    "architecture/leases.md"
+   ],
+   "links_in": 28
+  },
+  {
+   "path": "workloads/pods/pod-qos.md",
+   "title": "Pod Quality of Service Classes",
+   "words": 1344,
+   "headings": [
+    "Quality of Service classes",
+    "Guaranteed",
+    "Burstable",
+    "BestEffort",
+    "Memory QoS with cgroup v2",
+    "Memory throttling",
+    "Configuring memory reservation",
+    "System requirements",
+    "Some behavior is independent of QoS class {#class-independent-behavior}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "configuration/manage-resources-containers.md",
+    "scheduling-eviction/node-pressure-eviction.md",
+    "scheduling-eviction/pod-priority-preemption.md",
+    "workloads/pods/pod-lifecycle.md",
+    "workloads/pods/disruptions.md"
+   ],
+   "links_in": 6
+  },
+  {
+   "path": "workloads/pods/probes.md",
+   "title": "Liveness, Readiness, and Startup Probes",
+   "words": 2941,
+   "headings": [
+    "Types of probe {#types-of-probe}",
+    "Startup probe {#startup-probe}",
+    "Liveness probe {#liveness-probe}",
+    "Readiness probe {#readiness-probe}",
+    "When to use each probe {#when-to-use-each-probe}",
+    "When should you use a startup probe? {#when-should-you-use-a-startup-probe}",
+    "When should you use a liveness probe? {#when-should-you-use-a-liveness-probe}",
+    "When should you use a readiness probe? {#when-should-you-use-a-readiness-probe}",
+    "Check mechanisms {#check-mechanisms}",
+    "Probe results {#probe-results}",
+    "Configuration fields {#configure-probes}",
+    "Probe-level `terminationGracePeriodSeconds` {#probe-level-terminationgraceperiodseconds}"
+   ],
+   "links_out": [
+    "workloads/pods/pod-lifecycle.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "workloads/pods/scheduling-group.md",
+   "title": "Scheduling Group",
+   "words": 295,
+   "headings": [
+    "Specifying a scheduling group",
+    "Behavior",
+    "Missing PodGroup reference",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "workloads/workload-api/policies.md",
+    "scheduling-eviction/gang-scheduling.md"
+   ],
+   "links_in": 4
+  },
+  {
+   "path": "workloads/pods/sidecar-containers.md",
+   "title": "Sidecar Containers",
+   "words": 1229,
+   "headings": [
+    "Sidecar containers in Kubernetes {#pod-sidecar-containers}",
+    "Example application {#sidecar-example}",
+    "Sidecar containers and Pod lifecycle",
+    "Jobs with sidecar containers",
+    "Differences from application containers",
+    "Differences from init containers",
+    "Resource sharing within containers",
+    "Sidecar containers and Linux cgroups {#cgroups}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "workloads/pods/init-containers.md",
+    "workloads/pods/pod-lifecycle.md",
+    "scheduling-eviction/pod-overhead.md"
+   ],
+   "links_in": 4
+  },
+  {
+   "path": "workloads/pods/static-pods.md",
+   "title": "Static Pods",
+   "words": 453,
+   "headings": [
+    "Mirror Pods {#mirror-pods}",
+    "Limitations {#limitations}",
+    "Static Pods vs DaemonSets {#static-pods-vs-daemonsets}",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "overview/components.md",
+    "workloads/pods/ephemeral-containers.md",
+    "workloads/controllers/daemonset.md"
+   ],
+   "links_in": 1
+  },
+  {
+   "path": "workloads/pods/user-namespaces.md",
+   "title": "User Namespaces",
+   "words": 2081,
+   "headings": [
+    "{{% heading \"prerequisites\" %}}",
+    "Introduction",
+    "Understanding user namespaces for pods {#pods-and-userns}",
+    "Set up a node to support user namespaces",
+    "ID count for each of Pods",
+    "Integration with Pod security admission checks",
+    "Limitations",
+    "Filesystem support",
+    "Metrics and observability",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "security/pod-security-standards.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "workloads/workload-api/_index.md",
+   "title": "Workload API",
+   "words": 569,
+   "headings": [
+    "What is a Workload?",
+    "API structure",
+    "PodGroupTemplates",
+    "Referencing a workload controlling object",
+    "Gang scheduling with Jobs",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "workloads/controllers/job.md",
+    "workloads/workload-api/policies.md",
+    "workloads/workload-api/disruption-and-priority.md",
+    "workloads/pods/scheduling-group.md",
+    "scheduling-eviction/gang-scheduling.md"
+   ],
+   "links_in": 0
+  },
+  {
+   "path": "workloads/workload-api/disruption-and-priority.md",
+   "title": "Pod Group Disruption and Priority",
+   "words": 382,
+   "headings": [
+    "Disruption mode types",
+    "Pod",
+    "PodGroup",
+    "Pod group priority",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "scheduling-eviction/workload-aware-preemption.md",
+    "scheduling-eviction/pod-priority-preemption.md"
+   ],
+   "links_in": 2
+  },
+  {
+   "path": "workloads/workload-api/policies.md",
+   "title": "PodGroup Scheduling Policies",
+   "words": 362,
+   "headings": [
+    "Policy types",
+    "Basic policy",
+    "Gang policy",
+    "Setting policies via PodGroupTemplates",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "scheduling-eviction/podgroup-scheduling.md",
+    "workloads/controllers/job.md",
+    "scheduling-eviction/gang-scheduling.md"
+   ],
+   "links_in": 9
+  },
+  {
+   "path": "workloads/workload-api/topology-aware-scheduling.md",
+   "title": "Topology-Aware Workload Scheduling",
+   "words": 591,
+   "headings": [
+    "Topology-aware scheduling with gang scheduling policy",
+    "Topology-aware scheduling with basic scheduling policy",
+    "API configuration: scheduling constraints",
+    "Topology constraint",
+    "{{% heading \"whatsnext\" %}}"
+   ],
+   "links_out": [
+    "scheduling-eviction/podgroup-scheduling.md",
+    "workloads/workload-api/policies.md",
+    "scheduling-eviction/gang-scheduling.md"
+   ],
+   "links_in": 0
+  }
+ ]
+}
