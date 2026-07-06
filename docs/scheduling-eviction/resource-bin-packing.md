@@ -186,7 +186,7 @@ memory: 1
 cpu: 3
 ```
 
-FunctionShapePoint {{0, 0}, {100, 10}}
+{% raw %}FunctionShapePoint {{0, 0}, {100, 10}}{% endraw %}
 
 Node 1 spec:
 
