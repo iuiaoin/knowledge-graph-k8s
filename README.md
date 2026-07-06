@@ -5,8 +5,7 @@ distilled from the `docs/` snapshot (176 pages, ~283K words) into 39 concepts ac
 
 ## Viewing
 
-Open [`knowledge-graph/k8s-concepts-map.html`](knowledge-graph/k8s-concepts-map.html) in any browser —
-it is fully self-contained (no server or network needed). Node links open the published pages on kubernetes.io.
+[`k8s-map`](https://iuiaoin.github.io/knowledge-graph-k8s/)
 
 Viewer controls: `/` to search, legend chips to show/hide groups, edge-label and list-view toggles,
 light/dark theme, click a node for its summary and doc link, drag to pin, double-click to release.
